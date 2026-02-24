@@ -353,6 +353,78 @@
     .section { padding: 40px 0 32px; }
     .highlight-box { padding: 20px 16px; }
     .highlight-box th, .highlight-box td { padding: 8px 6px; font-size: 13px; }
+    .map-img { max-height: 240px; }
+  }
+
+  /* STATUS BANNER */
+  .status-banner {
+    background: #FFF8E1;
+    border: 1px solid #F0D060;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 24px 0;
+    text-align: center;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: #5D4037;
+    line-height: 1.6;
+  }
+  .status-banner strong { color: var(--red); }
+  .status-date { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+  /* MAP SECTION */
+  .map-group { margin: 32px 0; }
+  .map-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .map-card-header {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .map-card-header span { color: #FF6B5A; margin-right: 8px; }
+  .map-img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+  }
+  .map-caption {
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.65;
+    background: #FAFAF8;
+    border-top: 1px solid var(--border);
+  }
+  .map-caption strong { color: var(--red-dark); }
+
+  /* CONTRADICTION SUMMARY */
+  .contradiction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .contra-card {
+    background: #FFF8F6;
+    border: 1px solid #F0C0B0;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+  .contra-card .label { font-size: 12.5px; color: var(--text-light); margin-bottom: 4px; }
+  .contra-card .value { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 900; color: var(--red); }
+  .contra-card .sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+  @media (max-width: 600px) {
+    .contradiction-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .contra-card .value { font-size: 18px; }
   }
 </style>
 </head>
@@ -364,6 +436,9 @@
     <div class="hero-label">긴급 알림</div>
     <h1>수명산 체조광장이<br><em>철거됩니다</em></h1>
     <p class="hero-sub">서울 강서구 화곡동 산105-10번지<br>25년간 무단 사용된 사유지, 그 사실관계를 알려드립니다</p>
+    <div style="margin-top:28px; background:rgba(255,107,90,0.15); border:1px solid rgba(255,107,90,0.3); border-radius:6px; padding:14px 20px; font-size:14.5px; color:rgba(255,255,255,0.9); line-height:1.6;">
+      📌 <strong style="color:#FF6B5A;">현재 상황 (2026년 2월):</strong> 구청장님께 8차 민원을 통해 면담을 신청하였습니다.<br>면담에서 공시지가대로의 매입 여부를 직접 확인할 예정입니다.
+    </div>
   </div>
 </div>
 
@@ -375,8 +450,9 @@
     <a href="#purchase">매입 결정</a>
     <a href="#lawsuit">소송</a>
     <a href="#contradiction">행정 모순</a>
+    <a href="#map">지도로 보는 현실</a>
     <a href="#burden">소유자 부담</a>
-    <a href="#action">민원 요청</a>
+    <a href="#action">현재 상황</a>
   </div>
 </nav>
 
@@ -457,7 +533,7 @@
       <p>"시설물은 자연발생적으로 설치된 것이며, 인근 주민들이 설치한 것이다."</p>
       <div class="source">— 강서구청 소송 답변서</div>
     </div>
-    <p>그러나 강서구청 이름이 적힌 안내판이 설치되어 있었고, 구청장 공식 답변에서는 "설치된 시설물"이라고 직접 인정한 바 있습니다.</p>
+    <p>그러나 강서구청 이름이 적힌 안내판이 설치되어 있었고, 구청장 공식 답변에서는 "설치된 시설물"이라고 직접 인정한 바 있습니다. <strong>위성사진에서도 사람들이 밟아 만든 길과 체조광장이 선명하게 보입니다.</strong> (<a href="#map" style="color:var(--red);">→ 지도 섹션에서 확인</a>)</p>
 
     <h3 style="font-size:18px; margin:28px 0 14px; color:var(--dark);">법원 판결</h3>
     <p style="font-size:19px; font-weight:700; color:var(--red); text-align:center; padding:20px 0;">"지장물을 철거하고, 토지를 인도하라."</p>
@@ -532,9 +608,58 @@
     </div>
   </div>
 
-  <!-- 6. 소유자 부담 -->
-  <div class="section" id="burden">
+  <!-- 6. 지도로 보는 현실 -->
+  <div class="section" id="map">
     <div class="section-num">06</div>
+    <h2>지도로 보는 현실 – 펜스를 치면 수명산이 막힙니다</h2>
+    <p>강서구청은 "사적으로 쓰라"고 했습니다. 그런데 이 땅에서 소유자가 할 수 있는 가장 기본적인 일은 <strong>펜스를 치고 관리하는 것</strong>입니다. 아래 지도를 보시면, 그것이 어떤 결과를 가져오는지 한눈에 드러납니다.</p>
+
+    <div class="map-group">
+      <div class="map-card">
+        <div class="map-card-header"><span>지도 1</span> 전체 맥락 – 수명산과 주변 아파트 단지</div>
+        <img class="map-img" src="map_terrain.png" alt="화곡동 산105-10 지형지도">
+        <div class="map-caption">
+          바로 아래 아파트 단지(119~127동 등)의 땅값은 <strong>㎡당 438만 원</strong>. 이 땅은 <strong>㎡당 55만 원</strong>. 같은 화곡동인데 <strong>8배 차이</strong>입니다. 차이의 원인은 구청이 건 8개 규제입니다.
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-card-header"><span>지도 2</span> 위성사진 – 사용 흔적이 위성에서도 보인다</div>
+        <img class="map-img" src="map_satellite.png" alt="화곡동 산105-10 위성사진">
+        <div class="map-caption">
+          파란 경계선 안에 사람들이 밟아 만든 길, 체조광장, 정자 위치가 위성에서도 선명하게 보입니다. 소송에서 강서구청은 <strong>"자연발생적 시설"</strong>이라 주장했습니다. 이 위성사진이 자연발생적으로 보이십니까?
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-card-header"><span>지도 3</span> 필지 경계 – 정자·등산로·체조광장이 전부 사유지 안에 있다</div>
+        <img class="map-img" src="map_boundary.png" alt="화곡동 산105-10 경계선 지도">
+        <div class="map-caption">
+          <strong>수명산 정상에서 5m.</strong> 수명산 공원으로 올라가는 길이 이 땅을 전부 지나갑니다. 정자, 체조광장, 등산로 진입부가 전부 빨간 선(사유지) 안에 있습니다. <strong>여기에 펜스를 치면 수명산 공원 접근이 차단됩니다.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="contradiction-grid">
+      <div class="contra-card">
+        <div class="label">내 땅</div>
+        <div class="value">55만원/㎡</div>
+        <div class="sub">8중 규제 맹지</div>
+      </div>
+      <div class="contra-card">
+        <div class="label">바로 옆 푸르지오</div>
+        <div class="value">438만원/㎡</div>
+        <div class="sub">8배 차이</div>
+      </div>
+    </div>
+
+    <p>구청이 규제를 걸어 땅값을 주변의 10분의 1로 만들었습니다. 그 싼 가격(공시지가 9억)조차 매입을 거부합니다. 그러면서 세금은 그 9억 기준으로 부과합니다. 그리고 "사적으로 쓰라"고 했습니다.</p>
+    <p><strong>사적으로 쓰는 첫 번째 방법이 펜스입니다. 펜스를 치면 수명산이 막힙니다. 이것이 구청이 원하는 결과입니까?</strong></p>
+  </div>
+
+  <!-- 7. 소유자 부담 -->
+  <div class="section" id="burden">
+    <div class="section-num">07</div>
     <h2>소유자의 현재 상황</h2>
 
     <div class="burden-grid">
@@ -561,9 +686,9 @@
     <p>강서구의 연간 예산은 <strong>2조 원이 넘습니다.</strong> 이 땅의 공시지가는 약 9억 1천만 원입니다.</p>
   </div>
 
-  <!-- 7. 타임라인 -->
+  <!-- 8. 타임라인 -->
   <div class="section">
-    <div class="section-num">07</div>
+    <div class="section-num">08</div>
     <h2>25년의 기록</h2>
 
     <div class="timeline">
@@ -630,12 +755,12 @@
       <div class="tl-item">
         <div class="tl-year">2026.1~2</div>
         <div class="tl-dot"></div>
-        <div class="tl-content">매입 재요청 민원 제출 → <strong>"예산 없어 매입 불가, 철거만 가능"</strong> 답변. 구체적 근거 요청 민원 추가 제출, 현재 처리 중</div>
+        <div class="tl-content">매입 재요청 민원 1~7차 제출 → <strong>"예산 없어 매입 불가, 철거만 가능"</strong> 답변. 구체적 질문에 대한 답변은 단 하나도 없음</div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2026.2</div>
+        <div class="tl-year">2026.2.11</div>
         <div class="tl-dot"></div>
-        <div class="tl-content">민원 답변 확인 후 <strong>구청장 면담 신청 예정</strong></div>
+        <div class="tl-content"><strong>8차 민원 – 구청장님께 면담 신청.</strong> "글로는 전해지지 않는 이야기가 있습니다. 30분만 시간을 내어주십시오." 현재 면담 일정 조율 중</div>
       </div>
     </div>
   </div>
@@ -644,11 +769,13 @@
 
 <!-- CTA -->
 <div class="cta" id="action">
-  <h2>구민 여러분의 목소리가 필요합니다</h2>
-  <p>강서구청이 이 땅을 공시지가대로 매입하면 모든 것이 해결됩니다.<br>
-  구민은 체조광장을 계속 이용하고, 소유자는 25년간의 억울함에서 벗어날 수 있습니다.<br>
-  <strong>현재 민원 답변 처리 중이며, 답변 확인 후 구청장 면담을 신청할 예정입니다.</strong><br>
-  이 사안의 사실관계 전체를 공적 자료에 근거해 정리한 이 페이지를 민원에 첨부합니다. 구청장께서 직접 확인하시길 요청드립니다.</p>
+  <h2>현재 상황 – 구청장 면담 신청 중</h2>
+  <p>8차 민원을 통해 구청장님께 직접 면담을 요청했습니다.<br>
+  7번의 민원에 구체적 답변을 단 하나도 받지 못했기에, 얼굴을 마주하고 여쭙고자 합니다.<br>
+  <strong>"더도 말고 덜도 말고, 공시지가대로만 매입해 주십시오."</strong><br>
+  이것이 면담에서 드릴 유일한 요청입니다.</p>
+  <p style="font-size:14.5px; opacity:0.85; margin-top:12px;">강서구청이 이 땅을 공시지가대로 매입하면 모든 것이 해결됩니다.<br>
+  구민은 체조광장을 계속 이용하고, 소유자는 25년간의 억울함에서 벗어납니다.</p>
   <a class="cta-btn" href="https://www.gangseo.seoul.kr/mayor/my040103" target="_blank">
     구청장에게 바란다 → 매입 요청 민원 넣기
   </a>
@@ -659,7 +786,7 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  2026년 2월 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁<br>
+  2026년 2월 25일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁<br>
   이 페이지의 모든 내용은 공문서·법원 판결문·국민권익위원회 의결서 등 공적 자료에 근거한 사실입니다.
 </div>
 
