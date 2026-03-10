@@ -372,6 +372,51 @@
   .status-banner strong { color: var(--red); }
   .status-date { font-size: 13px; color: var(--text-light); margin-top: 4px; }
 
+  /* PHOTO GALLERY */
+  .photo-gallery { margin: 28px 0 8px; }
+  .photo-gallery-intro {
+    font-size: 14px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .photo-row {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .photo-row--1 { grid-template-columns: 1fr; }
+  .photo-row--2 { grid-template-columns: 1fr 1fr; }
+  .photo-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+  .photo-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .photo-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-row--1 .photo-item img { height: 340px; }
+  .photo-item-cap {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+    background: #FAFAF8;
+    border-top: 1px solid var(--border);
+  }
+  .photo-item-cap strong { color: var(--dark); }
+  @media (max-width: 640px) {
+    .photo-row--2,
+    .photo-row--3 { grid-template-columns: 1fr; }
+    .photo-row--1 .photo-item img { height: 240px; }
+    .photo-item img { height: 200px; }
+  }
+
   /* MAP SECTION */
   .map-group { margin: 32px 0; }
   .map-card {
@@ -437,7 +482,7 @@
     <h1>수명산 체조광장이<br><em>철거됩니다</em></h1>
     <p class="hero-sub">서울 강서구 화곡동 산105-10번지<br>25년간 무단 사용된 사유지, 그 사실관계를 알려드립니다</p>
     <div style="margin-top:28px; background:rgba(255,107,90,0.15); border:1px solid rgba(255,107,90,0.3); border-radius:6px; padding:14px 20px; font-size:14.5px; color:rgba(255,255,255,0.9); line-height:1.6;">
-      📌 <strong style="color:#FF6B5A;">현재 상황 (2026년 3월):</strong> 구청장이 면담을 공식 거부하였습니다.<br><strong style="color:#FFD700;">국민권익위원회 고충민원 접수 완료</strong> — 신청번호: 1AA-2603-0152911 (2026.03.05)
+      📌 <strong style="color:#FF6B5A;">현재 상황 (2026년 2월):</strong> 구청장님께 8차 민원을 통해 면담을 신청하였습니다.<br>면담에서 공시지가대로의 매입 여부를 직접 확인할 예정입니다.
     </div>
   </div>
 </div>
@@ -452,7 +497,6 @@
     <a href="#contradiction">행정 모순</a>
     <a href="#map">지도로 보는 현실</a>
     <a href="#burden">소유자 부담</a>
-    <a href="#mayor-response">구청장 답변 모순</a>
     <a href="#action">현재 상황</a>
   </div>
 </nav>
@@ -499,6 +543,58 @@
     </div>
 
     <div class="evidence">📎 <strong>증거자료:</strong> 2007년 강서구청 답변서, 2009년 강서구청 재답변, 현장 사진(2021년 7월)</div>
+
+    <div class="photo-gallery">
+      <p class="photo-gallery-intro">아래는 이 사유지에서 촬영된 실제 현장 사진입니다.</p>
+
+      <!-- 행 1: 체조 수업 전체 (1열 와이드) -->
+      <div class="photo-row photo-row--1">
+        <div class="photo-item">
+          <img src="photo_1_exercise.jpg" alt="수명산 생활체조광장 — 주민 20여 명이 체조 수업 중인 모습" loading="lazy">
+          <div class="photo-item-cap"><strong>체조 수업 현장</strong> — 매일 오전 강서구가 운영하는 체조 클래스에 20여 명의 주민이 참여합니다. 이 모든 활동이 사유지 위에서 이루어지고 있습니다.</div>
+        </div>
+      </div>
+
+      <!-- 행 2: 공간 전경 2장 -->
+      <div class="photo-row photo-row--2">
+        <div class="photo-item">
+          <img src="photo_2_overview.jpg" alt="수명산 생활체조광장 전체 전경 — 정자·조경·산책로" loading="lazy">
+          <div class="photo-item-cap"><strong>광장 전체 전경</strong> — 정자, 조경, 산책로가 갖추어진 이 공간은 495평 사유지 전체입니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_3_from_deck.jpg" alt="데크 위에서 내려다본 광장 — 운동기구·정자·다수의 주민" loading="lazy">
+          <div class="photo-item-cap"><strong>데크에서 내려다본 광장</strong> — 운동기구를 이용하는 주민들과 오른쪽 정자가 보입니다.</div>
+        </div>
+      </div>
+
+      <!-- 행 3: 강서구 증거 3장 -->
+      <div class="photo-row photo-row--3">
+        <div class="photo-item">
+          <img src="photo_4_staff.jpg" alt="공원유지관리 조끼를 입은 강서구 직원이 정자에 상주" loading="lazy">
+          <div class="photo-item-cap"><strong>강서구 공원유지관리 직원 상주</strong> — 소송에서 구청은 "자연발생적 시설"이라 주장했습니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_5_hours.jpg" alt="강서구 수명산 생활체조광장 공식 운영시간 안내판" loading="lazy">
+          <div class="photo-item-cap"><strong>강서구 공식 운영시간 안내판</strong> — 기간 1월~12월, 월~금, 오전 9:00~10:00. 구청이 직접 관리·운영하는 시설입니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_6_sign.jpg" alt="강서구 수명산 생활체조광장 공식 명칭 안내판" loading="lazy">
+          <div class="photo-item-cap"><strong>강서구 공식 명칭 안내판</strong> — "강서구 수명산 생활체조광장"이라는 명칭이 명시된 공식 간판입니다.</div>
+        </div>
+      </div>
+
+      <!-- 행 4: 일상 이용 2장 -->
+      <div class="photo-row photo-row--2">
+        <div class="photo-item">
+          <img src="photo_7_pavilion.jpg" alt="정자에서 쉬고 있는 주민들" loading="lazy">
+          <div class="photo-item-cap"><strong>정자의 일상적 이용</strong> — 주민들이 정자에서 휴식을 취하고 있습니다. 이 정자는 사유지 위에 소유자 동의 없이 설치된 시설물입니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_8_space.jpg" alt="맨발 걷기 — 정돈된 조경과 정자가 보이는 광장 전경" loading="lazy">
+          <div class="photo-item-cap"><strong>맨발 걷기 코스</strong> — 잘 정돈된 조경과 산책로. 이 땅을 강서구청은 "소유자가 사적으로 사용하면 된다"고 했습니다.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- 3. 매입 결정 -->
@@ -669,7 +765,7 @@
         <div class="label">상속세·취득세 대출</div>
       </div>
       <div class="burden-card">
-        <div class="num">월 73만</div>
+        <div class="num">월 80만</div>
         <div class="label">이자 부담</div>
       </div>
       <div class="burden-card">
@@ -761,100 +857,33 @@
       <div class="tl-item">
         <div class="tl-year">2026.2.11</div>
         <div class="tl-dot"></div>
-        <div class="tl-content"><strong>8차 민원 – 구청장님께 면담 신청.</strong> "글로는 전해지지 않는 이야기가 있습니다. 30분만 시간을 내어주십시오."</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2026.3.4</div>
-        <div class="tl-dot" style="background:#C0392D;"></div>
-        <div class="tl-content"><strong>구청장 진교훈, 면담 공식 거부.</strong> "본 사안은 법적·제도적 한계가 명확하여 면담을 통해 결론이 바뀔 수 있는 사안이 아니다." 8번의 민원, 직접 전화 요청 — 모두 거부.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2026.3.5</div>
-        <div class="tl-dot" style="background:#27AE60;"></div>
-        <div class="tl-content"><strong style="color:#27AE60;">국민권익위원회 고충민원 접수 완료.</strong> 신청번호: 1AA-2603-0152911. 강서구청의 행정약속 불이행, 이중 기준 행정, 재산권 침해에 대한 공식 조사 요청.</div>
+        <div class="tl-content"><strong>8차 민원 – 구청장님께 면담 신청.</strong> "글로는 전해지지 않는 이야기가 있습니다. 30분만 시간을 내어주십시오." 현재 면담 일정 조율 중</div>
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- 9. 구청장 답변 모순 -->
-<div class="section" id="mayor-response">
-  <div class="section-num">09</div>
-  <h2>구청장 공식 답변의 모순 (2026.3.4)</h2>
-
-  <p>구청장 진교훈은 2026년 3월 4일 공식 이메일(민원번호 2300)로 면담을 거부하며 다음과 같이 답변하였습니다.</p>
-
-  <div class="evidence" style="background:#FFF8F0; border-left:4px solid #C0392D; padding:20px; margin:20px 0; border-radius:0 6px 6px 0;">
-    <p style="font-style:italic; color:#555; margin-bottom:12px;">구청장 답변 원문:</p>
-    <p><strong>"지자체가 사유지를 매입할 때는 감정평가 등 객관적인 시세 평가를 거쳐야 합니다."</strong></p>
-    <p style="margin-top:8px;"><strong>"공시지가는 세금 부과를 위한 행정 기준일 뿐, 보상 기준과는 법적 체계가 다릅니다."</strong></p>
-  </div>
-
-  <p>이 말은 <strong>공시지가(9억)보다 높은 '실제 감정가'로 매입할 수 있다</strong>는 뜻으로 들립니다. 그런데 현실은 어떻습니까?</p>
-
-  <div style="background:#F9F9F9; border:1px solid #DDD; border-radius:8px; padding:20px; margin:20px 0; overflow-x:auto;">
-    <table style="width:100%; border-collapse:collapse; font-size:15px;">
-      <tr style="background:#C0392D; color:#fff;">
-        <th style="padding:10px 14px; text-align:left;">기준</th>
-        <th style="padding:10px 14px; text-align:right;">금액</th>
-        <th style="padding:10px 14px; text-align:left;">구청 입장</th>
-      </tr>
-      <tr style="border-bottom:1px solid #EEE;">
-        <td style="padding:10px 14px;">공시지가</td>
-        <td style="padding:10px 14px; text-align:right;"><strong>약 9억 1천만원</strong></td>
-        <td style="padding:10px 14px; color:#555;">"세금 기준일 뿐" (구청 공식 답변)</td>
-      </tr>
-      <tr style="border-bottom:1px solid #EEE; background:#FFFDF0;">
-        <td style="padding:10px 14px;"><strong>법원 지정 감정평가</strong></td>
-        <td style="padding:10px 14px; text-align:right;"><strong>11억 2,393만원</strong></td>
-        <td style="padding:10px 14px; color:#1A1A2E; font-weight:bold;">← 구청장님이 말씀하신 "객관적 시세"</td>
-      </tr>
-      <tr style="background:#FFF0F0;">
-        <td style="padding:10px 14px;">구청 제시 금액</td>
-        <td style="padding:10px 14px; text-align:right;"><strong>3억 5천만원</strong></td>
-        <td style="padding:10px 14px; color:#27AE60;">✅ 구청이 제안</td>
-      </tr>
-    </table>
-  </div>
-
-  <p>구청장은 <strong>"감정평가로 객관적 시세 평가를 해야 한다"</strong>고 했습니다. 법원이 지정한 감정평가사가 이미 <strong>11억 2,393만원</strong>으로 평가했습니다. 이것이 바로 구청장이 말한 "객관적 시세 평가"입니다.</p>
-  <p>그런데 구청은 이 법원 감정가마저 거부하고 <strong>3억 5천만원</strong>을 제시합니다. 법원 감정가의 <strong>31%</strong>입니다.</p>
-
-  <div class="quote-block" style="background:#F0F0FF; border-left:4px solid #3949AB; padding:16px 20px; margin:20px 0; border-radius:0 6px 6px 0;">
-    <strong>핵심 모순:</strong> "감정평가로 사야 한다"고 말하면서, 법원이 지정한 감정평가 결과는 인정하지 않는다.<br>
-    공시지가로 세금을 걷으면서, 공시지가로 매입은 거부한다.<br>
-    <strong>어떤 기준으로도 정당한 보상을 받을 수 없는 구조입니다.</strong>
-  </div>
-
-  <div class="evidence">📎 <strong>근거:</strong> 강서구청장 진교훈 공식 이메일 답변 (2026.3.4, 민원번호 2300), 서울남부지법 감정평가서 (더원감정평가사무소, 2022년)</div>
-</div>
-
-
 <!-- CTA -->
 <div class="cta" id="action">
-  <h2>현재 상황 – 국민권익위원회 고충민원 접수 완료</h2>
-  <p>구청장은 8번의 민원과 직접 전화 요청에도 면담을 거부하였습니다.<br>
-  2026년 3월 5일, <strong>국민권익위원회에 고충민원을 공식 접수</strong>하였습니다.<br>
-  신청번호: <strong>1AA-2603-0152911</strong></p>
-  <p style="font-size:14.5px; opacity:0.85; margin-top:12px;">
-  권익위는 행정기관의 위법·부당 행위로 인한 국민의 권리 침해를 조사하는 독립 기관입니다.<br>
-  강서구청이 이 땅을 공시지가대로 매입하면 모든 것이 해결됩니다.<br>
+  <h2>현재 상황 – 구청장 면담 신청 중</h2>
+  <p>8차 민원을 통해 구청장님께 직접 면담을 요청했습니다.<br>
+  7번의 민원에 구체적 답변을 단 하나도 받지 못했기에, 얼굴을 마주하고 여쭙고자 합니다.<br>
+  <strong>"더도 말고 덜도 말고, 공시지가대로만 매입해 주십시오."</strong><br>
+  이것이 면담에서 드릴 유일한 요청입니다.</p>
+  <p style="font-size:14.5px; opacity:0.85; margin-top:12px;">강서구청이 이 땅을 공시지가대로 매입하면 모든 것이 해결됩니다.<br>
   구민은 체조광장을 계속 이용하고, 소유자는 25년간의 억울함에서 벗어납니다.</p>
-  <a class="cta-btn" href="https://www.epeople.go.kr" target="_blank">
-    국민신문고 → 고충민원 함께 신청하기
-  </a>
-  <a class="cta-btn" href="https://www.gangseo.seoul.kr/mayor/my040103" target="_blank" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.8); color:#fff; margin-top:10px;">
-    구청장에게 바란다 → 직접 민원 넣기
+  <a class="cta-btn" href="https://www.gangseo.seoul.kr/mayor/my040103" target="_blank">
+    구청장에게 바란다 → 매입 요청 민원 넣기
   </a>
   <div class="cta-contact">
-    공원녹지과 ☎ 02-2600-4185 &nbsp;|&nbsp; 토지 소유자 오광탁 ☎ 010-7564-5085
+    공원녹지과 ☎ 02-2600-4185 &nbsp;|&nbsp; 토지 소유자 오광탁 ☎ 010-9496-5085
   </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  2026년 3월 5일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁<br>
+  2026년 2월 25일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁<br>
   이 페이지의 모든 내용은 공문서·법원 판결문·국민권익위원회 의결서 등 공적 자료에 근거한 사실입니다.
 </div>
 
