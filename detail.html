@@ -116,8 +116,13 @@
   .content { max-width: 740px; margin: 0 auto; padding: 0 24px; }
 
   /* SECTIONS */
-  .section { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+  .section { padding: 56px 0 40px; border-bottom: 1px solid var(--border); max-width: 740px; margin: 0 auto; }
+  .content > .section { max-width: none; margin: 0; }
   .section:last-child { border-bottom: none; }
+  /* .content 밖 섹션은 좌우 padding 추가 (모바일 끝 붙음 방지) */
+  body > .section { padding-left: 24px; padding-right: 24px; }
+  /* CTA 내부 텍스트도 가운데 폭 제한 */
+  .cta > * { max-width: 720px; margin-left: auto; margin-right: auto; }
   .section-num {
     font-family: 'Noto Serif KR', serif;
     font-size: 13px;
@@ -1095,7 +1100,7 @@
     <p style="margin:4px 0;"><strong>라항:</strong> "위 <strong>철거 및 인도의 이행을 완료하는 날까지</strong>" 연 444만원을 지급하라</p>
   </div>
 
-  <p>법원은 <strong>사용을 허가한 적이 없습니다.</strong> 오히려 "철거하라, 돌려주라"고 명령했습니다. 라항의 돈은 구청이 그 명령을 안 지키고 버티는 동안의 <strong>지연 손해배상</strong>입니다. 구청이 철거하면 지급도 끝납니다. 이것이 "사용료"입니까?</p>
+  <p>법원은 <strong>사용을 허가한 적이 없습니다.</strong> 오히려 "철거하라, 돌려주라"고 명령했습니다. 라항의 돈은 구청이 그 명령을 안 지키고 버티는 동안의 <strong>강제이행 페널티(불이행 강제금)</strong>입니다. 구청이 철거하면 지급도 끝납니다. 이것이 "사용료"입니까?</p>
 
   <p><strong>셋째, 구청은 판례를 잘못 적용하고 있습니다.</strong></p>
   <p>"부당이득 반환금을 수령하면 유료 사용"이라는 판례는, <strong>소유자가 자기 소유 기간에 대해 청구권을 행사한 경우</strong>에 관한 것입니다. 그런데 나는 내 소유 기간에 대해 청구권을 행사한 적이 없습니다. 청구권을 행사하지도 않은 소유자에게, 청구권 행사를 전제로 한 판례를 적용하는 것은 <strong>사안이 다른 판례를 덮어씌운 잘못된 행정</strong>입니다. 재산세과 담당자 본인도 전화에서 "법에 구체적 사례까지 기재되어 있지 않다"고 인정했습니다.</p>
