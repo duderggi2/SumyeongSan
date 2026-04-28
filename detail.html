@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수명산 체조광장을 지켜주세요</title>
+<meta name="description" content="서울 강서구 화곡동 산105-10번지, 25년간 무단 사용된 사유지 이야기. 사실관계와 공문서 증거를 정리합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0392D;
+    --red-dark: #96281B;
+    --dark: #1A1A2E;
+    --text: #2D2D2D;
+    --text-light: #666;
+    --bg: #FAFAF8;
+    --bg-warm: #F5F0E8;
+    --border: #E0D8CC;
+    --accent: #D4A017;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.85;
+    font-size: 16.5px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    color: #fff;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(192,57,45,0.15) 0%, transparent 50%, rgba(212,160,23,0.1) 100%);
+  }
+  .hero-inner { position: relative; max-width: 700px; margin: 0 auto; }
+  .hero-label {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(28px, 5.5vw, 44px);
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #FF6B5A;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* NAV */
+  .sticky-nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sticky-nav-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .sticky-nav a {
+    display: inline-block;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .sticky-nav a:hover {
+    color: var(--red);
+    border-bottom-color: var(--red);
+  }
+
+  /* CONTENT */
+  .content { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+  /* SECTIONS */
+  .section { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  .section p {
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  /* EVIDENCE BOX */
+  .evidence {
+    background: var(--bg-warm);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 14.5px;
+    border-radius: 0 4px 4px 0;
+  }
+  .evidence strong {
+    color: var(--red-dark);
+    font-weight: 700;
+  }
+
+  /* QUOTE */
+  .quote-block {
+    border-left: 3px solid var(--red);
+    padding: 16px 20px;
+    margin: 24px 0;
+    background: #FFF8F6;
+    border-radius: 0 4px 4px 0;
+  }
+  .quote-block p {
+    font-size: 15.5px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 0;
+    line-height: 1.75;
+  }
+  .quote-block .source {
+    font-style: normal;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 8px;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: #FFF3E0;
+    border: 1px solid #F0D4A0;
+    border-radius: 6px;
+    padding: 28px;
+    margin: 32px 0;
+  }
+  .highlight-box h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    color: var(--red);
+    margin-bottom: 18px;
+  }
+  .highlight-box table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+  .highlight-box th, .highlight-box td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #E8D4B0;
+    vertical-align: top;
+  }
+  .highlight-box th {
+    font-weight: 700;
+    color: var(--dark);
+    width: 55%;
+  }
+  .highlight-box td { color: var(--text-light); font-size: 13.5px; }
+
+  /* REGULATION LIST */
+  .reg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 20px 0;
+  }
+  .reg-item {
+    background: #F8F4EE;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .reg-item span { color: var(--red); font-weight: 700; margin-right: 6px; }
+
+  /* BURDEN */
+  .burden-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .burden-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+  }
+  .burden-card .num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--red);
+  }
+  .burden-card .label {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--red);
+    color: #fff;
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 48px;
+  }
+  .cta h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 560px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--red);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); }
+  .cta-contact {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.5);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* TIMELINE */
+  .timeline { margin: 24px 0; }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .tl-year {
+    flex-shrink: 0;
+    width: 70px;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--red);
+    padding-top: 2px;
+  }
+  .tl-dot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+    margin-top: 8px;
+    position: relative;
+  }
+  .tl-dot::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    width: 2px;
+    height: 40px;
+    background: #E0D0C0;
+  }
+  .tl-item:last-child .tl-dot::after { display: none; }
+  .tl-content {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .tl-content strong { color: var(--dark); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .reg-grid { grid-template-columns: 1fr; }
+    .burden-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .burden-card .num { font-size: 22px; }
+    .sticky-nav a { padding: 12px 12px; font-size: 12.5px; }
+    .section { padding: 40px 0 32px; }
+    .highlight-box { padding: 20px 16px; }
+    .highlight-box th, .highlight-box td { padding: 8px 6px; font-size: 13px; }
+    .map-img { max-height: 240px; }
+  }
+
+  /* STATUS BANNER */
+  .status-banner {
+    background: #FFF8E1;
+    border: 1px solid #F0D060;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 24px 0;
+    text-align: center;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: #5D4037;
+    line-height: 1.6;
+  }
+  .status-banner strong { color: var(--red); }
+  .status-date { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+  /* PHOTO GALLERY */
+  .photo-gallery { margin: 28px 0 8px; }
+  .photo-gallery-intro {
+    font-size: 14px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .photo-row {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .photo-row--1 { grid-template-columns: 1fr; }
+  .photo-row--2 { grid-template-columns: 1fr 1fr; }
+  .photo-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+  .photo-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .photo-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-row--1 .photo-item img { height: 360px; }
+  .photo-item-cap {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.55;
+    background: #FAFAF8;
+    border-top: 1px solid var(--border);
+  }
+  .photo-item-cap strong { color: var(--dark); }
+  @media (max-width: 640px) {
+    .photo-row--2,
+    .photo-row--3 { grid-template-columns: 1fr; }
+    .photo-row--1 .photo-item img { height: 240px; }
+    .photo-item img { height: 200px; }
+  }
+
+  /* MAP SECTION */
+  .map-group { margin: 32px 0; }
+  .map-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .map-card-header {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .map-card-header span { color: #FF6B5A; margin-right: 8px; }
+  .map-img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+  }
+  .map-caption {
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.65;
+    background: #FAFAF8;
+    border-top: 1px solid var(--border);
+  }
+  .map-caption strong { color: var(--red-dark); }
+
+  /* CONTRADICTION SUMMARY */
+  .contradiction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .contra-card {
+    background: #FFF8F6;
+    border: 1px solid #F0C0B0;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+  .contra-card .label { font-size: 12.5px; color: var(--text-light); margin-bottom: 4px; }
+  .contra-card .value { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 900; color: var(--red); }
+  .contra-card .sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+  @media (max-width: 600px) {
+    .contradiction-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .contra-card .value { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">긴급 알림</div>
+    <h1>수명산 체조광장이<br><em>철거됩니다</em></h1>
+    <p class="hero-sub">서울 강서구 화곡동 산105-10번지<br>25년간 무단 사용된 사유지, 그 사실관계를 알려드립니다</p>
+    <div style="margin-top:28px; background:rgba(255,107,90,0.15); border:1px solid rgba(255,107,90,0.3); border-radius:6px; padding:14px 20px; font-size:14.5px; color:rgba(255,255,255,0.9); line-height:1.6;">
+      📌 <strong style="color:#FF6B5A;">현재 상황 (2026년 3월):</strong> 구청장이 면담을 공식 거부. 15년간 안 걷던 재산세 617만원 소급 부과.<br><strong style="color:#FFD700;">권익위 고충민원 접수 + 과세전적부심사 청구 완료</strong>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="sticky-nav-inner">
+    <a href="index.html" style="color:var(--red); font-weight:700;">← 메인으로</a>
+    <a href="#land">이 땅의 이야기</a>
+    <a href="#history">25년 경위</a>
+    <a href="#purchase">매입 결정</a>
+    <a href="#lawsuit">소송</a>
+    <a href="#contradiction">행정 모순</a>
+    <a href="#map">지도로 보는 현실</a>
+    <a href="#burden">소유자 부담</a>
+    <a href="#mayor-response">구청장 모순</a>
+    <a href="#retaliation">보복 과세</a>
+    <a href="#tax-fight">적부심사</a>
+    <a href="#action">현재 상황</a>
+  </div>
+</nav>
+
+<div class="content">
+
+  <!-- 1. 이 땅의 이야기 -->
+  <div class="section" id="land">
+    <div class="section-num">01</div>
+    <h2>이 땅은 어떤 땅입니까</h2>
+    <p>여러분이 매일 아침 체조를 하시고, 산책을 즐기시는 <strong>수명산 생활체조광장</strong>. 이곳은 서울시 강서구 화곡동 산105-10번지, 면적 1,636㎡(약 495평)의 <strong>사유지</strong>입니다.</p>
+    <p>이 땅은 1990년 아버지가 매입하였고, 어머니를 거쳐 2021년 제가 상속받았습니다. 공시지가는 약 9억 1,240만 원입니다.</p>
+    <p>그리고 이 땅에는 <strong>8개의 규제</strong>가 중첩되어 있어, 건축도 개발도 농사도 할 수 없는 맹지입니다.</p>
+
+    <div class="reg-grid">
+      <div class="reg-item"><span>1</span>자연녹지지역</div>
+      <div class="reg-item"><span>2</span>제1종지구단위계획구역</div>
+      <div class="reg-item"><span>3</span>대공방어협조구역</div>
+      <div class="reg-item"><span>4</span>비행안전 제6구역</div>
+      <div class="reg-item"><span>5</span>소음대책지역 (가)</div>
+      <div class="reg-item"><span>6</span>소음대책지역 (나)</div>
+      <div class="reg-item"><span>7</span>상대정화구역 (중학교)</div>
+      <div class="reg-item"><span>8</span>상대정화구역 (고등학교)</div>
+    </div>
+
+    <div class="evidence">📎 <strong>증거자료:</strong> 등기사항전부증명서, 토지이용계획확인서 — 소유권 이전 경위 및 8중 규제 확인 가능</div>
+  </div>
+
+  <!-- 2. 25년 경위 -->
+  <div class="section" id="history">
+    <div class="section-num">02</div>
+    <h2>25년간 무단 사용된 경위</h2>
+    <p>1990년대 말부터 강서구청은 이 사유지 위에 정자, 야외 운동기구, 가로등, 조경시설, 산책로를 설치하고 "수명산 생활체조광장"이라는 이름으로 운영해 왔습니다.</p>
+    <p><strong>토지 소유자에게 단 한 번도 사용 허가를 받거나 사용료를 지급한 적이 없습니다.</strong></p>
+
+    <div class="quote-block">
+      <p>"체력단련 및 여가선용으로 잘 사용하고 있으니 토지주가 넓은 마음으로 이해해 주시기 바랍니다."</p>
+      <div class="source">— 2007년 강서구청 답변서</div>
+    </div>
+
+    <div class="quote-block">
+      <p>"공원으로 지정될 수 있도록 최선을 다할 계획입니다. 향후 더는 구조물 설치 없을 것이며, 재설치 시 사용승낙을 받겠습니다."</p>
+      <div class="source">— 2009년 강서구청 재답변 (그러나 사용승낙 요청을 받은 적 없음)</div>
+    </div>
+
+    <div class="evidence">📎 <strong>증거자료:</strong> 2007년 강서구청 답변서, 2009년 강서구청 재답변, 현장 사진(2021년 7월)</div>
+
+    <div class="photo-gallery">
+      <p class="photo-gallery-intro">이 땅이 어떻게 사용되고 있는지, 직접 보십시오.</p>
+
+      <!-- 행 1: 체조 수업 (와이드) -->
+      <div class="photo-row photo-row--1">
+        <div class="photo-item">
+          <img src="photo_1_exercise.jpg" alt="수명산 생활체조광장 — 주민 20여 명이 체조 수업 중인 모습" loading="lazy">
+          <div class="photo-item-cap"><strong>체조 수업 현장</strong> — 매일 오전, 강서구가 운영하는 체조 클래스에 20여 명의 주민이 참여합니다. 이 모든 활동이 사유지 위에서 이루어지고 있습니다.</div>
+        </div>
+      </div>
+
+      <!-- 행 2: 공간 전경 2장 -->
+      <div class="photo-row photo-row--2">
+        <div class="photo-item">
+          <img src="photo_2_overview.jpg" alt="수명산 생활체조광장 전체 전경 — 정자·조경·산책로" loading="lazy">
+          <div class="photo-item-cap"><strong>광장 전체 전경</strong> — 정자, 조경, 산책로가 갖춰진 이 공간 전체가 494평 사유지입니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_3_from_deck.jpg" alt="데크 위에서 내려다본 광장 — 운동기구·정자·다수의 주민" loading="lazy">
+          <div class="photo-item-cap"><strong>데크에서 내려다본 광장</strong> — 운동기구를 이용하는 주민들과 오른쪽 정자가 보입니다.</div>
+        </div>
+      </div>
+
+      <!-- 행 3: 강서구 운영 증거 3장 -->
+      <div class="photo-row photo-row--3">
+        <div class="photo-item">
+          <img src="photo_4_staff.jpg" alt="공원유지관리 조끼를 입은 강서구 직원이 정자에 상주" loading="lazy">
+          <div class="photo-item-cap"><strong>강서구 공원유지관리 직원 상주</strong> — 소송에서 구청은 <strong>"자연발생적 시설"</strong>이라 주장했습니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_5_hours.jpg" alt="강서구 수명산 생활체조광장 공식 운영시간 안내판" loading="lazy">
+          <div class="photo-item-cap"><strong>강서구 공식 운영시간 안내판</strong> — 기간 1~12월, 월~금, 오전 9:00~10:00. 구청이 직접 관리·운영합니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_6_sign.jpg" alt="강서구 수명산 생활체조광장 공식 명칭 안내판" loading="lazy">
+          <div class="photo-item-cap"><strong>강서구 공식 명칭 간판</strong> — "강서구 수명산 생활체조광장". 이 간판이 사유지 입구에 설치되어 있습니다.</div>
+        </div>
+      </div>
+
+      <!-- 행 4: 일상 이용 2장 -->
+      <div class="photo-row photo-row--2">
+        <div class="photo-item">
+          <img src="photo_7_pavilion.jpg" alt="정자에서 쉬고 있는 주민들" loading="lazy">
+          <div class="photo-item-cap"><strong>정자의 일상적 이용</strong> — 주민들이 모여 휴식을 취합니다. 이 정자는 소유자 동의 없이 설치된 시설물입니다.</div>
+        </div>
+        <div class="photo-item">
+          <img src="photo_8_space.jpg" alt="잘 정돈된 조경과 정자가 보이는 광장 전경" loading="lazy">
+          <div class="photo-item-cap"><strong>맨발 걷기 코스</strong> — 잘 정돈된 조경과 산책로. 강서구청은 이 땅을 "소유자가 사적으로 사용하면 된다"고 했습니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 매입 결정 -->
+  <div class="section" id="purchase">
+    <div class="section-num">03</div>
+    <h2>2021년 – 매입이 결정되었습니다</h2>
+    <p>2021년 5월, 어머니가 돌아가셨습니다. 저는 이 땅을 상속받으며 <strong>약 1억 2천만 원의 상속세·취득세</strong>를 대출받아 납부했습니다.</p>
+    <p>국민권익위원회는 조사 후 <strong>이 땅을 강서구청이 매입하는 것이 타당하다고 권고</strong>했습니다.</p>
+
+    <div class="quote-block">
+      <p>"매입 절차를 진행하고자 하며, 10월 중 계약서를 작성하고, 2022년 1월까지 잔금 지급 및 등기 이전을 완료할 계획입니다."</p>
+      <div class="source">— 2021년 10월 구청장 공식 답변</div>
+    </div>
+
+    <p><strong>공유재산심의회 승인까지 완료되었습니다.</strong></p>
+
+    <h3 style="font-size:18px; margin:28px 0 14px; color:var(--dark);">그런데 매입이 중단되었습니다</h3>
+    <p>저는 세금 1억 2천만 원을 낼 돈이 없는 절박한 상황에서, 공원녹지과장이 "1억 5천이면 흔쾌히 해결해줄 수 있다"고 하여 "그 정도면 어떻겠느냐"고 의사를 타진했습니다. <strong>공시지가 약 9억 원짜리 땅을 6분의 1 가격에 넘기라는 제안이었습니다.</strong></p>
+    <p>그런데 녹지과에서는 재확인도 하지 않고 바로 공유재산심의회에 올려버렸습니다. 제가 "다시 상의하자"고 했더니, <strong>"이미 구두계약이 성립됐다, 법대로 하라"</strong>고 답했습니다. 계약서가 작성된 적도, 계약금이 오간 적도 없었습니다.</p>
+    <p>2025년 4월에는 공원녹지과 팀장이 다시 <strong>"3억 5천만 원이면 매입해줄 수 있다"</strong>고 타진해 왔습니다. 공시지가 9억인 땅을 1억 5천, 3억 5천에 사겠다고 하신 것은 — <strong>처음부터 공시지가대로 매입할 생각이 없었다는 증거</strong>입니다.</p>
+
+    <div class="evidence">📎 <strong>증거자료:</strong> 국민권익위원회 의결서, 구청장에게 바란다 답변(2021.10, 2021.11), 공원녹지과 통화 녹취</div>
+  </div>
+
+  <!-- 4. 소송 -->
+  <div class="section" id="lawsuit">
+    <div class="section-num">04</div>
+    <h2>3년간의 소송</h2>
+    <p>저는 안내받은 대로 법적 절차를 밟았습니다. 3년간 소송을 진행했고, 소송비용으로만 약 2,500만 원을 지출했습니다.</p>
+
+    <h3 style="font-size:18px; margin:28px 0 14px; color:var(--dark);">소송에서 강서구청의 주장</h3>
+    <div class="quote-block">
+      <p>"시설물은 자연발생적으로 설치된 것이며, 인근 주민들이 설치한 것이다."</p>
+      <div class="source">— 강서구청 소송 답변서</div>
+    </div>
+    <p>그러나 강서구청 이름이 적힌 안내판이 설치되어 있었고, 구청장 공식 답변에서는 "설치된 시설물"이라고 직접 인정한 바 있습니다. <strong>위성사진에서도 사람들이 밟아 만든 길과 체조광장이 선명하게 보입니다.</strong> (<a href="#map" style="color:var(--red);">→ 지도 섹션에서 확인</a>)</p>
+
+    <h3 style="font-size:18px; margin:28px 0 14px; color:var(--dark);">법원 판결</h3>
+    <p style="font-size:19px; font-weight:700; color:var(--red); text-align:center; padding:20px 0;">"지장물을 철거하고, 토지를 인도하라."</p>
+    <p>강서구청은 항소했으나 <strong>서울남부지방법원에서 항소 기각</strong>, 이후 <strong>대법원에서 상고 기각</strong>(2024다323948, 2025.3.13)되어 <strong>1심 판결이 확정</strong>되었습니다.</p>
+    <p>확정된 판결 내용: 지장물 철거, 토지 인도, <strong>부당이득 반환금 약 4,625만 원</strong>(2016~2023년 불법점유에 대한 손해배상). 소멸시효에 의해 일부 기간만 인정된 금액입니다.</p>
+
+    <div class="evidence">📎 <strong>증거자료:</strong> 소송 답변서, 법원 판결문, 대법원 상고 기각 결정문(2025.3.13)</div>
+  </div>
+
+  <!-- 5. 공시지가 이중 잣대 -->
+  <div class="section" id="contradiction">
+    <div class="section-num">05</div>
+    <h2>핵심 모순 – 공시지가 이중 잣대</h2>
+    <p>이 사건의 본질은 한 문장으로 요약됩니다.</p>
+    <p style="font-size:19px; font-weight:700; color:var(--red); text-align:center; padding:16px 0; line-height:1.5;">"세금을 거둘 때는 공시지가가 법이고,<br>매입할 때는 공시지가가 법이 아닙니까?"</p>
+    <p>강서구청은 공시지가 약 9억 원을 기준으로 상속세·취득세 <strong>1억 2천만 원을 부과</strong>했습니다. 소유자가 공시지가를 낮춰달라고 요청하자 <strong>"절대 낮출 수 없다"</strong>고 거부했습니다.</p>
+    <p>그런데 같은 공시지가 기준으로 매입을 요청하자 <strong>"공시지가로는 매입할 수 없다"</strong>고 합니다.</p>
+    <p>더 나아가 구청은 이미 알고 있었습니다. 2021년에 1억 5천만 원을, 2025년에 3억 5천만 원을 제시한 것은 <strong>공시지가가 이 땅의 실제 가치와 맞지 않는다는 것을 구청 스스로 인정한 것</strong>입니다. 알면서도 공시지가를 조정하지 않았고, 그 기준으로 세금만 부과했습니다.</p>
+
+    <div class="highlight-box">
+      <h3>확인된 사실과 근거</h3>
+      <table>
+        <tr>
+          <th>공시지가 약 9억 원 기준으로 상속세·취득세 1억 2천만 원 부과</th>
+          <td>세금 고지서</td>
+        </tr>
+        <tr>
+          <th>같은 공시지가 기준으로 매입은 불가하다고 함</th>
+          <td>구청장 답변, 감사과 답변</td>
+        </tr>
+        <tr>
+          <th>2021년 1억 5천, 2025년 3억 5천 염가 매입 시도</th>
+          <td>공원녹지과 통화 녹취</td>
+        </tr>
+        <tr>
+          <th>소유자의 공시지가 하향 요청을 거부</th>
+          <td>감사담당관 답변(2021.8)</td>
+        </tr>
+        <tr>
+          <th>소송에서는 "자연발생적 시설"이라 주장함</th>
+          <td>소송 답변서</td>
+        </tr>
+        <tr>
+          <th>구청장 답변에서는 "설치된 시설물"이라 인정함</th>
+          <td>구청장에게 바란다 답변</td>
+        </tr>
+        <tr>
+          <th>2021년 매입 결정 및 공유재산심의회 승인 완료</th>
+          <td>구청장 답변, 의결서</td>
+        </tr>
+        <tr>
+          <th>2026년 같은 땅의 매입이 불가능하다고 함</th>
+          <td>공원녹지과 답변</td>
+        </tr>
+        <tr>
+          <th>철거 결정 전 체조 강사에게 미리 대체 장소를 마련해 줌</th>
+          <td>현장 확인</td>
+        </tr>
+        <tr>
+          <th>8번의 민원에 구체적 답변이 단 하나도 없음</th>
+          <td>구청장에게 바란다 답변 전문</td>
+        </tr>
+        <tr>
+          <th>15년간(2007~2021) 재산세 비과세 처리 → 소급 과세 예고</th>
+          <td>지방세법</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="quote-block">
+      <p>정리하면 이렇습니다: 규제는 구청이 만들고, 세금은 구청이 걷고, 사용은 구청이 하고, 보상은 구청이 안 합니다. 그리고 철거해서 돌려주면, 그때부터 재산세까지 부과합니다.</p>
+    </div>
+  </div>
+
+  <!-- 6. 지도로 보는 현실 -->
+  <div class="section" id="map">
+    <div class="section-num">06</div>
+    <h2>지도로 보는 현실 – 펜스를 치면 수명산이 막힙니다</h2>
+    <p>강서구청은 "사적으로 쓰라"고 했습니다. 그런데 이 땅에서 소유자가 할 수 있는 가장 기본적인 일은 <strong>펜스를 치고 관리하는 것</strong>입니다. 아래 지도를 보시면, 그것이 어떤 결과를 가져오는지 한눈에 드러납니다.</p>
+
+    <div class="map-group">
+      <div class="map-card">
+        <div class="map-card-header"><span>지도 1</span> 전체 맥락 – 수명산과 주변 아파트 단지</div>
+        <img class="map-img" src="map_terrain.png" alt="화곡동 산105-10 지형지도">
+        <div class="map-caption">
+          바로 아래 아파트 단지(119~127동 등)의 땅값은 <strong>㎡당 438만 원</strong>. 이 땅은 <strong>㎡당 55만 원</strong>. 같은 화곡동인데 <strong>8배 차이</strong>입니다. 차이의 원인은 구청이 건 8개 규제입니다.
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-card-header"><span>지도 2</span> 위성사진 – 사용 흔적이 위성에서도 보인다</div>
+        <img class="map-img" src="map_satellite.png" alt="화곡동 산105-10 위성사진">
+        <div class="map-caption">
+          파란 경계선 안에 사람들이 밟아 만든 길, 체조광장, 정자 위치가 위성에서도 선명하게 보입니다. 소송에서 강서구청은 <strong>"자연발생적 시설"</strong>이라 주장했습니다. 이 위성사진이 자연발생적으로 보이십니까?
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-card-header"><span>지도 3</span> 필지 경계 – 정자·등산로·체조광장이 전부 사유지 안에 있다</div>
+        <img class="map-img" src="map_boundary.png" alt="화곡동 산105-10 경계선 지도">
+        <div class="map-caption">
+          <strong>수명산 정상에서 5m.</strong> 수명산 공원으로 올라가는 길이 이 땅을 전부 지나갑니다. 정자, 체조광장, 등산로 진입부가 전부 빨간 선(사유지) 안에 있습니다. <strong>여기에 펜스를 치면 수명산 공원 접근이 차단됩니다.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="contradiction-grid">
+      <div class="contra-card">
+        <div class="label">내 땅</div>
+        <div class="value">55만원/㎡</div>
+        <div class="sub">8중 규제 맹지</div>
+      </div>
+      <div class="contra-card">
+        <div class="label">바로 옆 푸르지오</div>
+        <div class="value">438만원/㎡</div>
+        <div class="sub">8배 차이</div>
+      </div>
+    </div>
+
+    <p>구청이 규제를 걸어 땅값을 주변의 10분의 1로 만들었습니다. 그 싼 가격(공시지가 9억)조차 매입을 거부합니다. 그러면서 세금은 그 9억 기준으로 부과합니다. 그리고 "사적으로 쓰라"고 했습니다.</p>
+    <p><strong>사적으로 쓰는 첫 번째 방법이 펜스입니다. 펜스를 치면 수명산이 막힙니다. 이것이 구청이 원하는 결과입니까?</strong></p>
+  </div>
+
+  <!-- 7. 소유자 부담 -->
+  <div class="section" id="burden">
+    <div class="section-num">07</div>
+    <h2>소유자의 현재 상황</h2>
+
+    <div class="burden-grid">
+      <div class="burden-card">
+        <div class="num">1.2억</div>
+        <div class="label">상속세·취득세 대출</div>
+      </div>
+      <div class="burden-card">
+        <div class="num">월 73만</div>
+        <div class="label">이자 부담</div>
+      </div>
+      <div class="burden-card">
+        <div class="num">2,500만</div>
+        <div class="label">소송비용</div>
+      </div>
+      <div class="burden-card">
+        <div class="num">240만+</div>
+        <div class="label">철거 후 신규 부과 예상 연간 재산세</div>
+      </div>
+    </div>
+
+    <p>2007년부터 15년간(2007~2021) 이 땅에 재산세가 부과되지 않았습니다. 구청 스스로 "공공용으로 사용하고 있으므로 비과세"라고 판단한 것입니다. <strong>그런데 이제 와서 4년치 재산세 617만원을 소급 부과하겠다고 합니다.</strong> 철거해서 돌려줘도 새 재산세가 부과되고, 안 돌려줘도 소급 과세를 합니다.</p>
+    <p>이 땅은 8중 규제가 걸린 맹지로, <strong>매매도 불가능하고 담보로도 사용할 수 없습니다.</strong> 건축, 개발, 농사 모두 불가합니다.</p>
+    <p>강서구의 연간 예산은 <strong>2조 원이 넘습니다.</strong> 이 땅의 공시지가는 약 9억 1천만 원입니다.</p>
+  </div>
+
+  <!-- 8. 타임라인 -->
+  <div class="section">
+    <div class="section-num">08</div>
+    <h2>25년의 기록</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1990</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">아버지가 화곡동 산105-10번지 매입</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1990s</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">강서구청이 사유지에 시설물 설치, 체조광장으로 운영 시작</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2007</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">무단 사용 민원 → <strong>"넓은 마음으로 이해해 달라"</strong> 답변</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2009</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">재민원 → <strong>"공원 지정을 위해 최선을 다하겠다"</strong> 답변</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2011</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">도시관리계획(공원 지정) 공고 → <strong>무산됨</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021.5</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">어머니 별세, 토지 상속. 상속세·취득세 약 1.2억 원 발생</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021.8</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">국민권익위원회 <strong>매입 권고</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021.10</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">구청장 매입 결정, 공유재산심의회 승인 완료</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021.11</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">가격 조정 요청 → <strong>"구두계약 파기, 법대로 하라"</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022~24</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">3년간 소송 진행 (소송비용 약 2,500만 원). 1심 판결: <strong>"지장물 철거, 토지 인도하라"</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025.3</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content"><strong>대법원 상고 기각 – 1심 판결 확정</strong> (부당이득 약 4,625만 원)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025.4</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">공원녹지과 팀장 <strong>"3억 5천만 원이면 매입 가능"</strong> 타진 (공시지가 9억의 39%)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.1~2</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">매입 재요청 민원 1~7차 제출 → <strong>"예산 없어 매입 불가, 철거만 가능"</strong> 답변. 구체적 질문에 대한 답변은 단 하나도 없음</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.2.11</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content"><strong>8차 민원 – 구청장님께 면담 신청.</strong> "글로는 전해지지 않는 이야기가 있습니다. 30분만 시간을 내어주십시오."</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.3.4</div>
+        <div class="tl-dot" style="background:#C0392D;"></div>
+        <div class="tl-content"><strong>구청장 진교훈, 면담 공식 거부.</strong> "본 사안은 법적·제도적 한계가 명확하여 면담을 통해 결론이 바뀔 수 있는 사안이 아니다." 8번의 민원, 직접 전화 요청 — 모두 거부.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.3.5</div>
+        <div class="tl-dot" style="background:#27AE60;"></div>
+        <div class="tl-content"><strong style="color:#27AE60;">국민권익위원회 고충민원 접수 완료.</strong> 신청번호: 1AA-2603-0152911. 강서구청의 행정약속 불이행, 이중 기준 행정, 재산권 침해에 대한 공식 조사 요청.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.3.9</div>
+        <div class="tl-dot" style="background:#C0392D;"></div>
+        <div class="tl-content"><strong>핑퐁행정 발생.</strong> 규제 해제 가능성 문의 → 도시계획과 "공원녹지과로 가세요" → 공원녹지과 "콜백 드리겠습니다" → 콜백 없음. 대신 다음 날 과세 예고 전화가 왔습니다.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.3.10</div>
+        <div class="tl-dot" style="background:#C0392D;"></div>
+        <div class="tl-content"><strong>재산세과, 소급 과세 예고 전화.</strong> 권익위 접수 5일 후, 4년간 한 번도 부과하지 않았던 재산세를 2021~2024년 소급 부과 예고. 연 150만원 × 4년 = 약 600만원. "법원 판결로 지급한 부당이득금이 유료 사용 대가"라는 해석.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.3.17</div>
+        <div class="tl-dot" style="background:#C0392D;"></div>
+        <div class="tl-content"><strong>소급 재산세 고지서 수령.</strong> 2021~2024년 4개 년도, 합계 6,170,800원. 불복 마감 30일.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026.3.25</div>
+        <div class="tl-dot" style="background:#27AE60;"></div>
+        <div class="tl-content"><strong style="color:#27AE60;">과세전적부심사 청구.</strong> "나는 내 소유 기간에 대해 사용료를 청구한 적이 없다. 법원도 사용료를 명한 적이 없다." 증거서류 15건 첨부.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 9. 구청장 답변 모순 -->
+<div class="section" id="mayor-response">
+  <div class="section-num">09</div>
+  <h2>구청장 공식 답변의 모순 (2026.3.4)</h2>
+
+  <p>구청장 진교훈은 2026년 3월 4일 공식 이메일(민원번호 2300)로 면담을 거부하며 다음과 같이 답변하였습니다.</p>
+
+  <div class="evidence" style="background:#FFF8F0; border-left:4px solid #C0392D; padding:20px; margin:20px 0; border-radius:0 6px 6px 0;">
+    <p style="font-style:italic; color:#555; margin-bottom:12px;">구청장 답변 원문:</p>
+    <p><strong>"지자체가 사유지를 매입할 때는 감정평가 등 객관적인 시세 평가를 거쳐야 합니다."</strong></p>
+    <p style="margin-top:8px;"><strong>"공시지가는 세금 부과를 위한 행정 기준일 뿐, 보상 기준과는 법적 체계가 다릅니다."</strong></p>
+  </div>
+
+  <p>이 말은 <strong>공시지가(9억)보다 높은 '실제 감정가'로 매입할 수 있다</strong>는 뜻으로 들립니다. 그런데 현실은 어떻습니까?</p>
+
+  <div style="background:#F9F9F9; border:1px solid #DDD; border-radius:8px; padding:20px; margin:20px 0; overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:15px;">
+      <tr style="background:#C0392D; color:#fff;">
+        <th style="padding:10px 14px; text-align:left;">기준</th>
+        <th style="padding:10px 14px; text-align:right;">금액</th>
+        <th style="padding:10px 14px; text-align:left;">구청 입장</th>
+      </tr>
+      <tr style="border-bottom:1px solid #EEE;">
+        <td style="padding:10px 14px;">공시지가</td>
+        <td style="padding:10px 14px; text-align:right;"><strong>약 9억 1천만원</strong></td>
+        <td style="padding:10px 14px; color:#555;">"세금 기준일 뿐" (구청 공식 답변)</td>
+      </tr>
+      <tr style="border-bottom:1px solid #EEE; background:#FFFDF0;">
+        <td style="padding:10px 14px;"><strong>법원 지정 감정평가</strong></td>
+        <td style="padding:10px 14px; text-align:right;"><strong>11억 2,393만원</strong></td>
+        <td style="padding:10px 14px; color:#1A1A2E; font-weight:bold;">← 구청장님이 말씀하신 "객관적 시세"</td>
+      </tr>
+      <tr style="background:#FFF0F0;">
+        <td style="padding:10px 14px;">구청 제시 금액</td>
+        <td style="padding:10px 14px; text-align:right;"><strong>3억 5천만원</strong></td>
+        <td style="padding:10px 14px; color:#27AE60;">✅ 구청이 제안</td>
+      </tr>
+    </table>
+  </div>
+
+  <p>구청장은 <strong>"감정평가로 객관적 시세 평가를 해야 한다"</strong>고 했습니다. 법원이 지정한 감정평가사가 이미 <strong>11억 2,393만원</strong>으로 평가했습니다. 이것이 바로 구청장이 말한 "객관적 시세 평가"입니다.</p>
+  <p>그런데 구청은 이 법원 감정가마저 거부하고 <strong>3억 5천만원</strong>을 제시합니다. 법원 감정가의 <strong>31%</strong>입니다.</p>
+
+  <div class="quote-block" style="background:#F0F0FF; border-left:4px solid #3949AB; padding:16px 20px; margin:20px 0; border-radius:0 6px 6px 0;">
+    <strong>핵심 모순:</strong> "감정평가로 사야 한다"고 말하면서, 법원이 지정한 감정평가 결과는 인정하지 않는다.<br>
+    공시지가로 세금을 걷으면서, 공시지가로 매입은 거부한다.<br>
+    <strong>어떤 기준으로도 정당한 보상을 받을 수 없는 구조입니다.</strong>
+  </div>
+
+  <div class="evidence">📎 <strong>근거:</strong> 강서구청장 진교훈 공식 이메일 답변 (2026.3.4, 민원번호 2300), 서울남부지법 감정평가서 (더원감정평가사무소, 2022년)</div>
+</div>
+
+
+<!-- 10. 핑퐁행정 + 보복성 과세 -->
+<div class="section" id="retaliation">
+  <div class="section-num">10</div>
+  <h2>권익위 접수 5일 후 — 무슨 일이 벌어졌나</h2>
+
+  <p>2026년 3월 5일 국민권익위원회에 고충민원을 접수한 지 <strong>5일 만에</strong>, 강서구청에서 두 가지 일이 연달아 발생했습니다.</p>
+
+  <!-- 핑퐁 흐름도 -->
+  <h3 style="font-size:18px; margin:32px 0 16px; color:var(--dark);">① 3월 9일 — 핑퐁행정</h3>
+  <p>규제가 8개 걸린 이 땅에서 소유자가 합법적으로 할 수 있는 것이 무엇인지 알기 위해 강서구청에 문의했습니다.</p>
+
+  <div style="margin:24px 0;">
+    <div style="display:flex; flex-direction:column; gap:0;">
+
+      <div style="display:flex; align-items:stretch; gap:0;">
+        <div style="width:110px; min-width:110px; text-align:center; font-size:13px; font-weight:700; color:#555; padding-top:14px;">소유자</div>
+        <div style="flex:1; background:#F0F4FF; border:1px solid #C5D0F0; border-radius:8px; padding:14px 18px; font-size:14px;">
+          규제 해제 가능성 확인을 위해 <strong>도시계획과</strong>에 문의
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; padding:4px 0 4px 110px;">
+        <div style="font-size:22px; color:#C0392D;">↓</div>
+      </div>
+
+      <div style="display:flex; align-items:stretch; gap:0;">
+        <div style="width:110px; min-width:110px; text-align:center; font-size:13px; font-weight:700; color:#C0392D; padding-top:14px;">도시계획과</div>
+        <div style="flex:1; background:#FFF0F0; border:1px solid #F0C0C0; border-radius:8px; padding:14px 18px; font-size:14px;">
+          <strong>"산지관리법 소관이라 공원녹지과에 문의하세요."</strong><br>
+          <span style="font-size:13px; color:#888;">담당자: 임태희</span>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; padding:4px 0 4px 110px;">
+        <div style="font-size:22px; color:#C0392D;">↓</div>
+      </div>
+
+      <div style="display:flex; align-items:stretch; gap:0;">
+        <div style="width:110px; min-width:110px; text-align:center; font-size:13px; font-weight:700; color:#C0392D; padding-top:14px;">공원녹지과</div>
+        <div style="flex:1; background:#FFF0F0; border:1px solid #F0C0C0; border-radius:8px; padding:14px 18px; font-size:14px;">
+          <strong>"담당자 확인 후 콜백 드리겠습니다."</strong><br>
+          <span style="font-size:13px; color:#888;">담당자: 이세영 — 이후 콜백 없음</span>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; padding:4px 0 4px 110px;">
+        <div style="font-size:22px; color:#C0392D;">↓</div>
+      </div>
+
+      <div style="display:flex; align-items:stretch; gap:0;">
+        <div style="width:110px; min-width:110px; text-align:center; font-size:13px; font-weight:700; color:#C0392D; padding-top:14px;">다음 날</div>
+        <div style="flex:1; background:#FFF0F0; border:1px solid #C0392D; border-radius:8px; padding:14px 18px; font-size:14px;">
+          <strong>콜백 대신 재산세과에서 과세 예고 전화가 왔습니다.</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p style="font-size:14px; color:var(--text-light);">※ 해당 통화 2건 녹취 보존. 국민신문고 소극행정 신고 접수 완료 (신고번호: 1AA-2603-0367802, 2026.3.10)</p>
+
+  <!-- 보복성 과세 -->
+  <h3 style="font-size:18px; margin:36px 0 16px; color:var(--dark);">② 3월 10일 — 소급 과세 예고</h3>
+
+  <p>강서구청 재산세과에서 소유자 배우자에게 전화하여 이렇게 통보했습니다.</p>
+
+  <div class="quote-block" style="background:#FFF0F0; border-left:4px solid #C0392D;">
+    <p>"법원 판결로 부당이득금(임료)을 지급했으니, 그 기간은 <strong>유료 사용으로 본다</strong>. 지방세법 109조에 따라 비과세 요건에서 제외한다. 2021~2024년 재산세 4개 년도를 소급 부과하겠다."</p>
+    <div class="source">— 2026.3.10 강서구청 재산세과 (녹취 보존)</div>
+  </div>
+
+  <p><strong>4년간 단 한 번도 부과하지 않았던 재산세</strong>를, 권익위 접수 5일 후 갑자기 소급 통보한 것입니다.</p>
+
+  <div style="background:#F9F9F9; border:1px solid #DDD; border-radius:8px; padding:18px; margin:20px 0;">
+    <div style="font-weight:700; font-size:15px; margin-bottom:12px; color:var(--dark);">예상 과세 금액</div>
+    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:140px; text-align:center; padding:14px; background:#FFF0F0; border-radius:6px; border:1px solid #F0C0C0;">
+        <div style="font-size:22px; font-weight:800; color:#C0392D;">연 150만원+</div>
+        <div style="font-size:13px; color:#888; margin-top:4px;">1개년 예상</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; padding:14px; background:#FFF0F0; border-radius:6px; border:1px solid #F0C0C0;">
+        <div style="font-size:22px; font-weight:800; color:#C0392D;">× 4년</div>
+        <div style="font-size:13px; color:#888; margin-top:4px;">2021~2024년</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; padding:14px; background:#C0392D; border-radius:6px;">
+        <div style="font-size:22px; font-weight:800; color:#fff;">600만원+</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px;">소급 과세 예상 총액</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 새 자기모순 -->
+  <h3 style="font-size:18px; margin:36px 0 16px; color:var(--dark);">이 과세 예고가 만든 새로운 자기모순</h3>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0;">
+    <div style="background:#FFF8F0; border:1px solid #F0C0B0; border-radius:8px; padding:18px;">
+      <div style="font-size:12px; font-weight:700; color:#C0392D; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">소송에서의 주장</div>
+      <p style="font-size:14px; line-height:1.6; margin:0;">"해당 시설은 <strong>자연발생적</strong>이며, 피고(강서구청)가 점유하거나 관리한 사실이 없습니다."</p>
+    </div>
+    <div style="background:#F0FFF4; border:1px solid #B0E0C0; border-radius:8px; padding:18px;">
+      <div style="font-size:12px; font-weight:700; color:#1A7A40; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">과세 예고에서의 주장</div>
+      <p style="font-size:14px; line-height:1.6; margin:0;">"법원 판결로 <strong>임료를 지급</strong>했으니, 해당 기간은 유료 사용으로 본다."</p>
+    </div>
+  </div>
+
+  <div class="quote-block" style="background:#F0F0FF; border-left:4px solid #3949AB;">
+    <strong>임료는 점유를 전제로 합니다.</strong><br>
+    점유한 사실이 없다고 주장하면서, 동시에 임료를 지급했다고 말할 수는 없습니다.<br>
+    두 주장은 논리적으로 양립 불가능합니다.
+  </div>
+
+  <div class="evidence">📎 <strong>근거:</strong> 강서구청 재산세과 통화 녹취 (2026.3.10), 소극행정 신고 접수번호 1AA-2603-0367802 (2026.3.10), 권익위 고충민원 추가 자료 제출 (2026.3.10)</div>
+</div>
+
+<!-- 11. 소급과세 + 적부심사 청구 -->
+<div class="section" id="tax-fight">
+  <div class="section-num">11</div>
+  <h2>말도 안 되는 세금 — 과세전적부심사를 청구하였습니다</h2>
+
+  <p>2026년 3월 17일, 위 섹션에서 예고된 과세가 현실이 되었습니다. 강서구청 재산세과로부터 <strong>2021~2024년 귀속 재산세 6,170,800원</strong>의 과세예고 통지서가 도착했습니다. 15년간 한 번도 부과하지 않았던 재산세를 4년치 한꺼번에 소급 부과하겠다는 것입니다.</p>
+
+  <h3 style="font-size:18px; margin:36px 0 16px; color:var(--dark);">강서구청의 논리</h3>
+
+  <div class="quote-block" style="background:#FFF0F0; border-left:4px solid #C0392D;">
+    <p>"법원 판결에 따라 부당이득금(임료)을 지급하였으므로, 소유자가 <strong>사용료를 수령</strong>한 것이다. 따라서 비과세 요건(무상 사용)에서 제외한다."</p>
+    <div class="source">— 강서구청 재산세과 과세사유</div>
+  </div>
+
+  <h3 style="font-size:18px; margin:36px 0 16px; color:var(--dark);">이것이 왜 말이 안 되는가</h3>
+
+  <p><strong>첫째, 나는 사용료를 청구한 적이 없습니다.</strong></p>
+  <p>이 소송의 본질은 어머니가 소유자로 있던 15년간(2007~2021)의 불법점유에 대해, 상속인인 제가 상속 채권을 행사한 것입니다. 소멸시효 5년에 의해 2016~2021년분만 인정되었고, 그 기간은 전부 어머니가 소유자였던 기간입니다. 재판이 2023년까지 진행되면서 법원이 자연스럽게 그 기간까지 포함시킨 것이지, 제가 "내 소유 기간에 대한 사용료를 달라"고 요청한 적이 없습니다.</p>
+  <p><strong>나는 내가 실질적으로 소유한 기간(2021~현재)에 대해 사용료를 청구하거나, 유료 사용에 합의하거나, 사용을 허락한 적이 단 한 번도 없습니다.</strong></p>
+
+  <p><strong>둘째, 법원은 "사용료"를 명한 적이 없습니다.</strong></p>
+  <p>판결 주문은 이렇습니다:</p>
+
+  <div style="background:#F9F9F9; border:1px solid #DDD; border-radius:8px; padding:18px; margin:20px 0;">
+    <p style="margin:4px 0;"><strong>가항:</strong> 지장물을 <strong>철거</strong>하라</p>
+    <p style="margin:4px 0;"><strong>나항:</strong> 토지를 <strong>인도</strong>하라</p>
+    <p style="margin:4px 0;"><strong>다항:</strong> 과거분 부당이득금을 지급하라</p>
+    <p style="margin:4px 0;"><strong>라항:</strong> "위 <strong>철거 및 인도의 이행을 완료하는 날까지</strong>" 연 444만원을 지급하라</p>
+  </div>
+
+  <p>법원은 <strong>사용을 허가한 적이 없습니다.</strong> 오히려 "철거하라, 돌려주라"고 명령했습니다. 라항의 돈은 구청이 그 명령을 안 지키고 버티는 동안의 <strong>지연 손해배상</strong>입니다. 구청이 철거하면 지급도 끝납니다. 이것이 "사용료"입니까?</p>
+
+  <p><strong>셋째, 구청은 판례를 잘못 적용하고 있습니다.</strong></p>
+  <p>"부당이득 반환금을 수령하면 유료 사용"이라는 판례는, <strong>소유자가 자기 소유 기간에 대해 청구권을 행사한 경우</strong>에 관한 것입니다. 그런데 나는 내 소유 기간에 대해 청구권을 행사한 적이 없습니다. 청구권을 행사하지도 않은 소유자에게, 청구권 행사를 전제로 한 판례를 적용하는 것은 <strong>사안이 다른 판례를 덮어씌운 잘못된 행정</strong>입니다. 재산세과 담당자 본인도 전화에서 "법에 구체적 사례까지 기재되어 있지 않다"고 인정했습니다.</p>
+
+  <p><strong>넷째, 이 과세 구조 자체가 부조리합니다.</strong></p>
+  <p>남의 땅을 20년간 무단으로 점거하고, 법원이 "돌려주라"고 명령했는데 안 돌려주고, 그 벌금을 냈다는 이유로 되레 소유자에게 세금을 부과하겠다는 것입니다. 구청이 법원 명령대로 철거하면 라항 지급이 끝나고, 과세 근거도 사라집니다. <strong>결국 불법점유를 계속할수록 소유자에게 세금이 부과되는 구조입니다.</strong></p>
+
+  <div style="background:#E8F5E9; border:1px solid #A5D6A7; border-radius:8px; padding:20px; margin:28px 0;">
+    <div style="font-size:15px; font-weight:700; color:#1A7A40; margin-bottom:10px;">과세전적부심사 청구 완료 (접수번호 4041)</div>
+    <p style="font-size:14.5px; line-height:1.7; margin:0;">2026년 3월 26일, 위 부당한 과세에 대하여 <strong>과세전적부심사청구서</strong>를 강서구청 재산세과에 제출하였습니다 (접수번호 4041). 15건의 증거서류를 첨부하였습니다. 기각이 예상되며, 기각 시 <strong>국무총리 소속 독립기관인 조세심판원</strong>에 심판을 청구할 것입니다.</p>
+  </div>
+
+  <div class="evidence">📎 <strong>근거:</strong> 재산세 과세예고 통지서 4건 (2026.3.9), 과세전적부심사청구서 및 별지·증거서류 15건 (2026.3.25), 재산세과 담당자 통화 녹취 (2026.3.10)</div>
+</div>
+
+
+<!-- 12. 핑퐁 행정의 구조적 한계 -->
+<div class="section" id="pingpong-structure">
+  <div class="section-num">12</div>
+  <h2>어디에 하소연해도 돌아오는 곳은 같습니다 (2026.3~4)</h2>
+
+  <p>강서구청의 행정 처리에 대해 <strong>4개 외부 채널</strong>에 이의를 제기했습니다. 국민권익위원회, 소극행정 신고, 서울시 감사위원회, 구청장 직접 민원. 결과는 아래와 같습니다.</p>
+
+  <div style="margin:28px 0; overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+      <tr style="background:var(--dark); color:#fff;">
+        <th style="padding:12px 14px; text-align:left; width:25%;">채널</th>
+        <th style="padding:12px 14px; text-align:left; width:25%;">경로</th>
+        <th style="padding:12px 14px; text-align:left; width:25%;">최종 답변자</th>
+        <th style="padding:12px 14px; text-align:left; width:25%;">결과</th>
+      </tr>
+      <tr style="border-bottom:1px solid #EEE;">
+        <td style="padding:12px 14px;"><strong>국민권익위원회</strong><br><span style="font-size:12px; color:#888;">고충민원</span></td>
+        <td style="padding:12px 14px; font-size:13px;">권익위 → 서울시 → <span style="color:#C0392D; font-weight:700;">강서구 공원녹지과</span></td>
+        <td style="padding:12px 14px; color:#C0392D; font-weight:700;">정미경<br><span style="font-size:12px; color:#888;">(피고충 당사자)</span></td>
+        <td style="padding:12px 14px; font-size:13px;">"안타깝다"로 종결</td>
+      </tr>
+      <tr style="border-bottom:1px solid #EEE; background:#FAFAFA;">
+        <td style="padding:12px 14px;"><strong>소극행정 신고</strong></td>
+        <td style="padding:12px 14px; font-size:13px;">국민신문고 → <span style="color:#C0392D; font-weight:700;">강서구 감사담당관</span></td>
+        <td style="padding:12px 14px; font-weight:700;">김명수<br><span style="font-size:12px; color:#888;">(구청 옹호 답변)</span></td>
+        <td style="padding:12px 14px; font-size:13px;">구청 입장 대변 + <span style="color:#C0392D; font-weight:700;">정미경</span> 연락처 안내</td>
+      </tr>
+      <tr style="border-bottom:1px solid #EEE;">
+        <td style="padding:12px 14px;"><strong>서울시 감사위원회</strong></td>
+        <td style="padding:12px 14px; font-size:13px;">서울시 → <span style="color:#C0392D; font-weight:700;">강서구 감사과</span> 이관</td>
+        <td style="padding:12px 14px; font-weight:700;">강서구 감사과<br><span style="font-size:12px; color:#888;">(= 김명수)</span></td>
+        <td style="padding:12px 14px; font-size:13px;">이미 구청 옹호 답변 완료 상태</td>
+      </tr>
+      <tr style="background:#FFF8F0;">
+        <td style="padding:12px 14px;"><strong>구청장에게 바란다</strong><br><span style="font-size:12px; color:#888;">10차 민원</span></td>
+        <td style="padding:12px 14px; font-size:13px;">구청장 → 감사담당관 이우성 경유</td>
+        <td style="padding:12px 14px; font-weight:700;">구청장 진교훈<br><span style="font-size:12px; color:#888;">(답변 내용은 녹지과 소관 안내)</span></td>
+        <td style="padding:12px 14px; font-size:13px;">매입 거부, 면담 무시, <span style="color:#C0392D; font-weight:700;">정미경</span> 연락처 안내</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="quote-block" style="background:#FFF0F0; border-left:4px solid #C0392D;">
+    <strong>4개 채널, 4개 답변, 결론은 하나:</strong><br>
+    "공원녹지과 정미경(☎02-2600-4256)에게 연락주시면 친절하게 설명하여 드리도록 하겠습니다."
+  </div>
+
+  <p>구청장은 <strong>10번의 민원에도 면담을 거부</strong>하고, 모든 사안을 공원녹지과로 돌립니다. 국민권익위원회에 하소연해도, 서울시 감사위원회에 신고해도, 최종적으로 답변을 작성하는 사람은 <strong>민원의 대상이 된 바로 그 부서</strong>입니다.</p>
+
+  <p>피고충 당사자가 자기 사건을 자기가 답변하고, 감사 부서가 감사 대상을 옹호하고, 구청장은 결정을 내리지 않고 시간만 끌고 있습니다.</p>
+
+  <h3 style="font-size:18px; margin:32px 0 16px; color:var(--dark);">"자연발생적" — 법원이 부정한 주장을 구청장이 반복합니다</h3>
+
+  <p>구청장 진교훈은 2026년 3월 27일 10차 민원 답변에서 이렇게 썼습니다.</p>
+
+  <div class="quote-block" style="background:#FFF8F0; border-left:4px solid var(--accent);">
+    "자연발생적으로 형성된 산책로 등 나머지 토지에 대해서도 재산세 감면 등 최대한 조치할 예정"
+  </div>
+
+  <p>그러나 2002년 5월, <strong>구청장 결재·공식 예산으로 시설물 설치 공사를 발주한 공문</strong>(을1호증, 공녹58430)이 존재합니다. 2001년에는 <strong>구청 주도로 "수명산 생활체조교실 사업계획서"</strong>(을3호증)를 작성했습니다. 법원은 이 증거들을 바탕으로 구청의 불법점유를 인정하고 철거를 명령했습니다.</p>
+
+  <p><strong>법원이 이미 기각한 주장을, 구청장이 공식 민원 답변에서 반복하고 있습니다.</strong></p>
+
+  <div class="evidence">📎 <strong>근거:</strong> 권익위 답변 (2026.3.16, 담당 정미경), 소극행정 답변 (2026.3.16, 감사담당관 김명수), 10차 민원 답변 (2026.3.27, 구청장 진교훈), 이송이력 (국민권익위원회 → 서울시, 2026.3.10, 이송자 류지호)</div>
+</div>
+
+
+<!-- CTA -->
+<div class="cta" id="action">
+  <h2>현재 상황 – 행정 민원 채널 소진, 조세심판원으로</h2>
+  <p>10번의 민원, 3개 외부 채널 — <strong>모든 답변이 공원녹지과 정미경으로 돌아왔습니다.</strong><br>
+  구청장은 면담을 거부하고, 어떤 결정도 내리지 않습니다.<br><br>
+  2026년 3월 26일, 부당한 소급 재산세 <strong>6,170,800원</strong>에 대해 <strong>과세전적부심사를 청구</strong>하였습니다 (접수번호 4041).<br>
+  기각되면 <strong>국무총리 소속 독립기관인 조세심판원</strong>에 심판을 청구할 것입니다.<br><br>
+  강서구청이 이 땅을 정당한 가격으로 매입하면 모든 것이 해결됩니다.<br>
+  구민은 체조광장을 계속 이용하고, 소유자는 25년간의 억울함에서 벗어납니다.</p>
+  <a class="cta-btn" href="https://www.epeople.go.kr" target="_blank">
+    국민신문고 → 고충민원 함께 신청하기
+  </a>
+  <a class="cta-btn" href="https://www.gangseo.seoul.kr/mayor/my040103" target="_blank" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.8); color:#fff; margin-top:10px;">
+    구청장에게 바란다 → 직접 민원 넣기
+  </a>
+  <div class="cta-contact">
+    공원녹지과 ☎ 02-2600-4185 &nbsp;|&nbsp; 토지 소유자 오광탁 ☎ 010-7564-5085
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  2026년 4월 28일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁<br>
+  이 페이지의 모든 내용은 공문서·법원 판결문·국민권익위원회 의결서·민원 답변서 등 공적 자료에 근거한 사실입니다.<br>
+  <a href="index.html" style="color:var(--red); font-weight:700; margin-top:12px; display:inline-block;">← 메인 페이지로 돌아가기</a>
+</div>
+
+</body>
+</html>
