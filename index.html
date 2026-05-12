@@ -356,6 +356,91 @@
     .number-value { font-size: 38px; }
     .quote-block { padding: 18px 20px; }
   }
+
+  /* STICKY BOTTOM BAR — 따라다니는 안내 */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    color: #fff;
+    padding: 11px 18px;
+    z-index: 99;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.25);
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+    border-top: 3px solid var(--red);
+  }
+  .sticky-bar.show { transform: translateY(0); }
+  .sticky-bar.hidden { display: none; }
+  .sticky-bar-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sticky-bar-msg {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.45;
+    min-width: 0;
+  }
+  .sticky-bar-msg strong {
+    color: var(--red-light);
+    font-weight: 700;
+  }
+  .sticky-bar-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .sticky-bar-btn {
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .sticky-bar-btn:hover { background: var(--red-dark); }
+  .sticky-bar-btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .sticky-bar-btn.secondary:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.7);
+  }
+  .sticky-bar-close {
+    background: transparent;
+    border: 0;
+    color: rgba(255,255,255,0.55);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+  .sticky-bar-close:hover { color: #fff; }
+
+  body { padding-bottom: 0; }
+  body.bar-shown { padding-bottom: 64px; }
+
+  @media (max-width: 600px) {
+    .sticky-bar { padding: 9px 12px; }
+    .sticky-bar-inner { gap: 8px; }
+    .sticky-bar-msg { font-size: 12.5px; line-height: 1.35; }
+    .sticky-bar-msg .desktop-only { display: none; }
+    .sticky-bar-btn { padding: 7px 10px; font-size: 12px; }
+    body.bar-shown { padding-bottom: 80px; }
+  }
 </style>
 </head>
 <body>
@@ -365,10 +450,10 @@
   <div class="hero-inner">
     <div class="hero-label">시민에게 알립니다</div>
     <h1>강서구청은 <em>25년</em> 동안<br>저희 가족 땅을 무단으로 썼습니다</h1>
-    <p class="hero-sub">서울 강서구 화곡동 산105-10번지 (495평)<br>법원 3심에서 모두 승소했지만, 행정은 멈추지 않습니다.</p>
+    <p class="hero-sub">서울 강서구 화곡동 산105-10번지 (495평, 임야 1,636㎡)<br>법원 3심 모두 승소. 그러나 행정은 멈추지 않았습니다.</p>
     <div class="hero-status">
-      📌 <strong>2026년 4월 현재:</strong> 대법원 확정 + 판결금 수령 완료.<br>
-      그리고 <span class="gold">15년간 면제됐던 재산세 6,170,800원이 4년치 일괄 소급 부과</span>되어, 조세심판원에 청구를 준비하고 있습니다.
+      📌 <strong>2026년 5월 12일 현재:</strong> 강서구청은 <span class="gold">15년간 일관되게 비과세 처리해온 본 토지에 대해 4년치 재산세 6,170,800원을 일괄 소급 부과</span>했습니다.<br>
+      같은 24시간 안에 사유지에 게시한 항의 현수막 철거까지 강요했습니다.
     </div>
   </div>
 </div>
@@ -378,19 +463,23 @@
   <div class="numbers-inner">
     <div class="number-card">
       <div class="number-value">25<span class="unit">년</span></div>
-      <div class="number-label">무단 점유 기간</div>
+      <div class="number-label">강서구청 무단 점유 기간<br>(2002 ~ 현재)</div>
+    </div>
+    <div class="number-card">
+      <div class="number-value">17<span class="unit">년</span></div>
+      <div class="number-label">같은 법조문에서<br>비과세 → 유료 사용 정반대 결론</div>
     </div>
     <div class="number-card">
       <div class="number-value">11.2<span class="unit">억원</span></div>
-      <div class="number-label">법원 감정가</div>
+      <div class="number-label">법원 감정가<br>(더원감정, 2023)</div>
     </div>
     <div class="number-card">
       <div class="number-value red">386<span class="unit">년</span></div>
-      <div class="number-label">구청이 철거를 안 해서 발생하는<br>강제금만으로 이 땅값을 회수하는 시간</div>
+      <div class="number-label">철거 안 한 채 강제금만으로<br>이 땅값을 회수하는 비현실적 기간</div>
     </div>
     <div class="number-card">
-      <div class="number-value red">617<span class="unit">만원</span></div>
-      <div class="number-label">15년 비과세 후 4년<br>일괄 소급 과세액</div>
+      <div class="number-value red">6,170,800<span class="unit">원</span></div>
+      <div class="number-label">4년치 일괄 소급 과세<br>(2021~2024, 2026.5.12. 부과)</div>
     </div>
   </div>
 </div>
@@ -401,23 +490,53 @@
   <!-- 01. 사실 -->
   <div class="section-block">
     <div class="section-num">01 · 사실</div>
-    <h2>법원이 확정한 단 두 가지</h2>
-    <p><strong>첫째, 강서구청은 이 토지(화곡동 산105-10, 임야 1,636㎡)를 25년간 무단으로 점유했습니다.</strong> 2002년 「시설물 설치 공사 시행 공문」을 통해 직접 광장·정자·체조장을 조성·관리해왔으며, 이는 법원이 확정 판결한 사실입니다.</p>
-    <p><strong>둘째, 강서구청은 2007~2021년 15년간 본 토지에 대한 재산세를 비과세 처리했습니다.</strong> 2009년에는 토지 소유자(오광탁의 모친)에게 「공녹-1667호」로 비과세 사실을 직접 안내하기까지 했습니다.</p>
-    <p>그리고 2022년 같은 사건의 민사소송에서 강서구청은 법정에 「임료감정 의견서」를 제출하면서 "<strong>공공 목적 사용으로 비과세가 정당하다</strong>"고 명시 자인했고, 2007~2021년 비과세 현황표(합계 37,312,370원)까지 첨부하였습니다.</p>
+    <h2>강서구청이 본인 입으로 남긴 세 개의 문서</h2>
+    <p>이 사건의 본질은 한 행정청이 같은 토지·같은 법조문에 대해 <strong>17년에 걸쳐 정반대 결론을 세 번 도출</strong>했다는 사실에 있습니다. 그 세 번을 강서구청 본인이 작성한 공문·법정 의견서·과세 통지서에서 그대로 인용합니다.</p>
+
+    <div class="quote-block">
+      <div class="label">① 2009.2.18. 강서구청장 명의 민원 회신 (공원녹지과-1667호)</div>
+      <p>"지방세법 제185조(국가 등에 대한 비과세) 제2항 규정에 의거 <strong>국가 및 지방자치단체가 1년 이상 공공용으로 사용하는 재산에 대하여는 재산세를 부과하지 않는 점을 알려드립니다.</strong>"</p>
+      <p style="margin-top: 10px;">"만일 재설치시 <strong>반드시 토지소유자인 귀하께 사용승낙을 받은 이후에 처리</strong>토록 하겠습니다."</p>
+    </div>
+    <p>→ 강서구청은 본인 입으로 「① 공공용 사용 = 비과세 + ② 사용승낙 받겠다」고 약속했습니다. 그 후 17년간 사용승낙을 단 한 번도 받지 아니했습니다.</p>
+
+    <div class="quote-block">
+      <div class="label">② 2022.10.4. 강서구청 법원 제출 「임료감정에 대한 의견서」 (법무법인 선우)</div>
+      <p>"이 사건 토지 일부를 공공 목적으로 사용함에 따라 지방세법 제185조 제2항에 의거 2007년부터 이 사건 토지 전체에 대한 재산세를 감면하여 왔으므로 <strong>임료는 해당없다고 봄이 타당할 것</strong>입니다."</p>
+      <p style="margin-top: 10px;">+ 첨부: 「재산세 미부과 근거 및 미부과액 현황」 — 2007~2021년 미부과 합계 <strong>37,312,370원</strong> 정밀 산정표.</p>
+    </div>
+    <p>→ 강서구청은 법정에서 「임료는 해당없다」고 명시 자인했습니다. 사용에 대한 대가가 발생하는 관계 자체가 아니라는 뜻입니다.</p>
+
+    <div class="quote-block">
+      <div class="label">③ 2026.3.9. 강서구청장 명의 과세예고통지 4건 (재산세과-3676)</div>
+      <p>「과세사유」: "1년 이상 공용 또는 공공용으로 사용하는 재산의 <strong>유료 사용</strong>(2024다323948 판결에 따라 <strong>임료 지급</strong>)"</p>
+      <p style="margin-top: 10px;">→ 2021~2024년 재산세 등 합계 <strong>6,170,800원</strong> 4년치 일괄 소급 부과.</p>
+    </div>
+    <p>→ 그러나 2024다323948 대법원 판결 주문은 「부당이득 지급」이지 「임료 지급」이 아닙니다. <strong>판결문 어디에도 「임료」라는 단어는 사용되지 아니합니다.</strong> 강서구청이 통지서에 「임료」를 임의로 삽입한 것입니다.</p>
+
+    <p style="margin-top: 26px;"><strong>같은 행정청. 같은 법조문(구 지방세법 §185② = 신 §109②). 17년에 걸쳐 정반대 결론 3회.</strong></p>
   </div>
 
   <!-- 02. 핵심 모순 -->
   <div class="section-block">
     <div class="section-num">02 · 핵심 모순</div>
-    <h2>"벌금만 내면 영원히 점유해도 된다"<br>는 결론이 가능합니까?</h2>
-    <p>대법원 확정 판결의 주문은 다음 셋입니다.</p>
-    <p>① <strong>철거 명령</strong> — 시설물을 철거하라<br>② <strong>인도 명령</strong> — 토지를 소유자에게 돌려주라<br>③ 위 ①·② <strong>이행 완료일까지</strong> 매년 4,444,890원의 부당이득금을 지급하라</p>
-    <p>위 ③은 "철거하라"는 명령을 강제하기 위한 <strong>처벌적 배상금</strong>입니다. 빨리 철거할수록 발생이 멈추도록 설계된 이행강제 페널티입니다.</p>
-    <p>그런데 강서구청은 이 페널티를 「유료 사용료」로 간주하여, 위 444만원 중 일부를 다시 재산세로 환수하려 하고 있습니다.</p>
+    <h2>벌금이 사용료로 둔갑할 수 있습니까?</h2>
+    <p>대법원 확정 판결(2025.3.13. 선고 2024다323948)의 주문은 다음 셋입니다.</p>
+    <p>① <strong>철거 명령</strong> — 시설물을 철거하라<br>② <strong>인도 명령</strong> — 토지를 소유자에게 돌려주라<br>③ 위 ①·② <strong>이행 완료일까지</strong> 매년 4,444,890원의 「부당이득」을 지급하라</p>
+    <p>위 ③은 "철거하라"는 명령의 이행을 강제하기 위한 <strong>처벌적 강제금</strong>입니다. 빨리 철거할수록 발생이 멈추도록 설계된 이행강제 페널티입니다. 판결문은 이를 시종일관 「부당이득」으로 표현했습니다.</p>
+    <p>그런데 강서구청은 이 페널티를 <strong>「유료 사용 대가」로 의제</strong>하여, 그 의제에 기반해 2021~2024년 4년치 재산세를 일괄 소급 부과했습니다.</p>
+
     <div class="quote-block">
-      <div class="label">이 논리가 확정될 경우</div>
-      <p>강서구청은 매년 약 290만원(444만원 − 재산세 154만원)의 실질 부담만으로 시가 11억 2천만원 토지(495평)를 <strong>사실상 영구히 무단 점유 + 철거 의무 면제</strong>를 받게 됩니다. 회수까지 386년이 걸리는 비현실적 결과입니다. 즉 "<strong>벌금만 내면 범죄를 계속 저질러도 된다</strong>"는 논리와 다르지 않습니다.</p>
+      <div class="label">국가가 시민 땅을 무단 점유한 경우 vs 시민이 국가 땅을 무단 점유한 경우</div>
+      <p><strong>시민이 국가 토지를 무단 점유하면</strong> — 국유재산법 §72에 따라 변상금(대부료 120%)이 부과됩니다. 변상금을 매년 납부해도 누구도 *"시민이 적법한 유료 사용 권원을 취득했다"* 고 인정하지 않습니다. 변상금은 처벌이지 사용료가 아닙니다.</p>
+      <p style="margin-top: 10px;"><strong>그러나 본 사건에서 강서구청은</strong> — 본인이 시민 사유지를 무단 점유한 후 강제 납부하는 부당이득금을 *"적법한 유료 사용 대가"* 로 의제하고, 그 의제에 기반해 토지 소유자에게 재산세까지 부과합니다.</p>
+      <p style="margin-top: 14px;">→ <strong>같은 법리 구조에서 시민과 국가가 정반대로 적용되는 결과.</strong> 이는 헌법 제11조 평등 원칙을 정면으로 위반합니다.</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="label">이 의제가 확정될 경우의 결론</div>
+      <p>강서구청은 매년 약 290만원(444만원 − 재산세 154만원)의 실질 부담만으로 시가 11억 2,393만원 토지(495평)를 <strong>사실상 영구히 무단 점유 + 철거 의무 면제</strong>를 받게 됩니다. 회수까지 386년이 걸리는 비현실적 결과입니다.</p>
+      <p style="margin-top: 10px;">즉 "<strong>벌금만 내면 범죄를 계속 저질러도 된다</strong>"는 논리와 본질적으로 같습니다.</p>
     </div>
   </div>
 
@@ -447,24 +566,40 @@
         <div class="timeline-mini-text">부당이득반환 청구 소 제기</div>
       </div>
       <div class="timeline-mini-row">
-        <div class="timeline-mini-date">2023.11</div>
-        <div class="timeline-mini-text">법원 화해권고 (1억 + 연 1,400만원 임료) → 강서구청 「이유 없이」 거부</div>
+        <div class="timeline-mini-date">2022.10.4</div>
+        <div class="timeline-mini-text">강서구청, 법원에 「임료감정 의견서」 제출 — "<strong>임료는 해당없다</strong>" 법정 자인 + 15년 미부과액 37,312,370원 정밀 산정표 첨부 (을102호증)</div>
       </div>
       <div class="timeline-mini-row">
-        <div class="timeline-mini-date">2025.3</div>
-        <div class="timeline-mini-text"><strong>대법원 확정</strong> — 강서구청 패소 (불법점유·철거·인도·부당이득)</div>
+        <div class="timeline-mini-date">2023.11.7</div>
+        <div class="timeline-mini-text">법원 화해권고 (1억 + 연 1,400만원) → 강서구청 「이유 없이」 거부 (갑115·을105호증)<br>같은 날, 청구인 측 변호사가 청구원인에 「유상 사용 시 재산세 부과」 시나리오 <strong>사전 예견</strong> 기재</div>
       </div>
       <div class="timeline-mini-row">
-        <div class="timeline-mini-date">2026.3</div>
-        <div class="timeline-mini-text">강서구청, 15년 비과세 뒤집고 4년치 재산세 6,170,800원 <strong>소급 과세 예고</strong></div>
+        <div class="timeline-mini-date">2023.11.20</div>
+        <div class="timeline-mini-text">청구인 본인, 이의신청서에 "<strong>피고의 부당한 소급 과세 보복 가능성 우려</strong>" 기록 (갑108호증)</div>
+      </div>
+      <div class="timeline-mini-row">
+        <div class="timeline-mini-date">2025.3.13</div>
+        <div class="timeline-mini-text"><strong>대법원 확정</strong> — 강서구청 패소 (불법점유·철거·인도·부당이득). 판결문에 「임료」 없음, 「부당이득」으로 일관</div>
+      </div>
+      <div class="timeline-mini-row">
+        <div class="timeline-mini-date">2026.3.9</div>
+        <div class="timeline-mini-text">강서구청, 15년 비과세 뒤집고 4년치(2021~2024) 재산세 6,170,800원 <strong>소급 과세 예고</strong>. 「과세사유」에 "유료 사용" + "임료 지급" 명시</div>
       </div>
       <div class="timeline-mini-row">
         <div class="timeline-mini-date">2026.4.27</div>
         <div class="timeline-mini-text"><strong>과세전적부심사 「불 채 택」</strong> 통보 (제2026-53호)</div>
       </div>
       <div class="timeline-mini-row">
-        <div class="timeline-mini-date">2026.5~7</div>
-        <div class="timeline-mini-text"><strong>조세심판원에 심판청구 준비 중</strong></div>
+        <div class="timeline-mini-date">2026.5.11</div>
+        <div class="timeline-mini-text">강서구청 도시디자인과, 사유지에 게시한 항의 현수막 <strong>철거·집회신고 강요</strong></div>
+      </div>
+      <div class="timeline-mini-row">
+        <div class="timeline-mini-date">2026.5.12</div>
+        <div class="timeline-mini-text"><strong>본세 부과처분 4건 통지</strong> (위택스, 합계 6,170,800원, 납기 6/1). 같은 날 청구인은 강서경찰서 1인 시위 신고 접수 — 경찰관 본인이 "이건 집회 신고 대상이 아닙니다" 명시 인정</div>
+      </div>
+      <div class="timeline-mini-row">
+        <div class="timeline-mini-date">2026.6~8</div>
+        <div class="timeline-mini-text"><strong>조세심판원 심판청구</strong> — 본세 부과처분 통지일(5/12) + 90일 = 8/10 마감</div>
       </div>
     </div>
   </div>
@@ -474,9 +609,15 @@
     <div class="section-num">04 · 왜 알려야 하나</div>
     <h2>이 사건은 단지 한 사람의 이야기가 아닙니다</h2>
     <p>본 사건이 그대로 확정되면, 전국의 모든 지방자치단체가 다음과 같이 행동할 수 있는 선례가 됩니다.</p>
-    <p>"사인의 토지를 무단 점유하고, 매수·합의 시도를 모두 거부한 후, 판결의 철거 명령을 영구히 이행하지 않으면서 그에 따른 강제금만 매년 지급하면, 그 토지를 사실상 영구히 점유할 수 있다."</p>
-    <p>이는 헌법 제23조의 재산권 보장과 정당 보상 원칙을 정면으로 잠탈하는 결과입니다. 한 시민의 토지가 이렇게 다뤄지면, 다음은 누구의 토지일지 알 수 없습니다.</p>
-    <p>이 사건에 대한 시민의 관심과 동참은, 행정청이 함부로 사유재산권을 침해하지 못하도록 하는 가장 강력한 견제입니다.</p>
+    <div class="quote-block" style="background: #fff5f0; border-left-color: var(--red-dark);">
+      <p>"사인의 토지를 무단 점유하고 → 매수·합의 시도를 모두 거부한 후 → 판결의 철거 명령을 영구히 이행하지 않으면서 → 그에 따른 강제금만 매년 지급하면 → 그 강제금이 「유료 사용 대가」로 의제되고 → 토지 소유자에게 재산세까지 부과할 수 있으며 → 결과적으로 그 토지를 사실상 영구히 점유할 수 있다."</p>
+    </div>
+
+    <p>이는 헌법 제23조의 재산권 보장과 정당 보상 원칙을 정면으로 잠탈하는 결과이며, 헌법 제11조의 평등 원칙(시민·국가 동일 법리 구조)을 위반하는 결과입니다.</p>
+
+    <p>특히 본 사건에서 강서구청은 <strong>같은 24시간 안에 두 갈래로 청구인을 압박</strong>했습니다 — 2026.5.11. 본인 소유 사유지에 게시한 항의 현수막을 철거하라고 강요했고, 다음날 2026.5.12. 본세 부과처분 4건(6,170,800원)을 일괄 통지했습니다. 동시에 강서구청은 <strong>본인이 25년간 무단 점유 중인 그 토지에 "수명산 생활체조 광장"이라는 공식 표지판을 설치·유지하면서, 토지 소유자의 정당한 표현을 "광고물 위반"으로 분류</strong>했습니다. 자기 점유는 적법, 소유자 표현은 불법 — 같은 행정청, 정반대 적용입니다.</p>
+
+    <p>한 시민의 토지가 이렇게 다뤄지면, 다음은 누구의 토지일지 알 수 없습니다. 이 사건에 대한 시민의 관심과 동참은, 행정청이 함부로 사유재산권을 침해하지 못하도록 하는 가장 강력한 견제입니다.</p>
   </div>
 
 </div>
@@ -509,6 +650,20 @@
 </div>
 
 
+<!-- NEW: 5월 사건 핫이슈 -->
+<div class="detail-link" style="background: #fff5f0; border-top: 4px solid #C0392D; padding: 32px 24px; text-align: center;">
+  <div class="detail-link-inner" style="max-width: 720px; margin: 0 auto;">
+    <div style="display: inline-block; background: #C0392D; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 100px; margin-bottom: 14px;">2026 · 5월 사건 · NEW</div>
+    <h3 style="font-size: 22px; color: #1A1A2E; margin-bottom: 10px; line-height: 1.4;">같은 24시간 안에, 두 갈래 압박</h3>
+    <p style="font-size: 15.5px; color: #2D2D2D; margin-bottom: 18px; line-height: 1.7;">
+      2026년 5월 11일 강서구청은 사유지에 게시한 항의 현수막을 철거하라고 강요했다.<br>
+      다음날 5월 12일 같은 행정청은 4년치 본세 6,170,800원을 일괄 부과했다.<br>
+      그리고 강서경찰서 정보과 담당관은 명시적으로 인정했다 — <strong>"이건 집회 신고 대상이 아닙니다"</strong>.
+    </p>
+    <a class="detail-btn" href="2026-05-event.html" style="background: #C0392D; color: #fff;">5월 사건 전체 보기 →</a>
+  </div>
+</div>
+
 <!-- DETAIL LINK -->
 <div class="detail-link">
   <div class="detail-link-inner">
@@ -520,10 +675,60 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  2026년 4월 28일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁 ☎ 010-7564-5085<br>
+  2026년 5월 12일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁 ☎ 010-7564-5085<br>
   공원녹지과 ☎ 02-2600-4185 &nbsp;|&nbsp; 이 페이지의 모든 내용은 공문서·법원 판결문·국민권익위원회 의결서·민원 답변서 등 공적 자료에 근거한 사실입니다.<br>
-  <a href="detail.html">전체 기록 보기</a>
+  <a href="2026-05-event.html">2026년 5월 사건</a> &nbsp;|&nbsp; <a href="detail.html">전체 기록 보기</a>
 </div>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar" aria-label="아카이브 안내">
+  <div class="sticky-bar-inner">
+    <div class="sticky-bar-msg">
+      <strong>17년 모순. 3개의 공문.</strong> <span class="desktop-only">— </span>사실 관계 자세히 보기
+    </div>
+    <div class="sticky-bar-actions">
+      <a class="sticky-bar-btn" href="2026-05-event.html">5월 사건</a>
+      <a class="sticky-bar-btn secondary" href="detail.html">전체 기록</a>
+    </div>
+    <button class="sticky-bar-close" id="stickyBarClose" aria-label="닫기" title="닫기">×</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var bar = document.getElementById('stickyBar');
+  var closeBtn = document.getElementById('stickyBarClose');
+  var SHOW_AFTER_PX = 250;
+  var STORAGE_KEY = 'stickyBarClosed_2026_05';
+  var closed = false;
+  try { closed = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+
+  if (closed) {
+    bar.classList.add('hidden');
+    return;
+  }
+
+  function update() {
+    if (window.scrollY > SHOW_AFTER_PX) {
+      bar.classList.add('show');
+      document.body.classList.add('bar-shown');
+    } else {
+      bar.classList.remove('show');
+      document.body.classList.remove('bar-shown');
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  closeBtn.addEventListener('click', function () {
+    bar.classList.add('hidden');
+    document.body.classList.remove('bar-shown');
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+  });
+})();
+</script>
 
 </body>
 </html>
