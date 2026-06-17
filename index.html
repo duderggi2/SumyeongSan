@@ -659,3 +659,108 @@
   <div class="participation-inner">
     <h2>이 사건을 함께 알아주세요</h2>
     <p>당신의 이름과 한 마디가 이 싸움의 정당성을 키웁니다. 익명·닉네임으로도 참여 가능합니다.</p>
+
+    <div class="action-grid">
+      <a class="action-btn" href="https://forms.gle/XmKw6sVGhMeUb3xw5" target="_blank" rel="noopener">
+        <span class="icon">✊</span>
+        동참합니다
+        <span class="sub">닉네임 + 응원 한 마디</span>
+      </a>
+      <a class="action-btn secondary" href="https://www.gangseo.seoul.kr/mayor/my040103" target="_blank" rel="noopener">
+        <span class="icon">🏛️</span>
+        구청장에 바란다
+        <span class="sub">강서구청에 직접 민원</span>
+      </a>
+    </div>
+
+    <div class="participation-note">
+      ※ 동참 페이지는 닉네임만 받으며 본명·연락처는 수집하지 않습니다.<br>
+      ※ 수집된 동참자 수는 조세심판원 청구 시 「공익적 관심 사안」 입증 자료로 활용됩니다.<br>
+      ※ 응원 메시지는 운영자(오광탁)가 비공개로만 받으며, 별도 게시되지 않습니다.
+    </div>
+  </div>
+</div>
+
+
+<!-- NEW: 5월 사건 핫이슈 -->
+<div class="detail-link" style="background: #fff5f0; border-top: 4px solid #C0392D; padding: 32px 24px; text-align: center;">
+  <div class="detail-link-inner" style="max-width: 720px; margin: 0 auto;">
+    <div style="display: inline-block; background: #C0392D; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 100px; margin-bottom: 14px;">2026 · 5월 사건 · NEW</div>
+    <h3 style="font-size: 22px; color: #1A1A2E; margin-bottom: 10px; line-height: 1.4;">같은 24시간 안에, 두 갈래 압박</h3>
+    <p style="font-size: 15.5px; color: #2D2D2D; margin-bottom: 18px; line-height: 1.7;">
+      2026년 5월 11일 강서구청은 사유지에 게시한 항의 현수막을 철거하라고 강요했다.<br>
+      다음날 5월 12일 같은 행정청은 4년치 본세 6,170,800원을 일괄 부과했다.<br>
+      그리고 강서경찰서 정보과 담당관은 명시적으로 인정했다 — <strong>"이건 집회 신고 대상이 아닙니다"</strong>.
+    </p>
+    <a class="detail-btn" href="2026-05-event.html" style="background: #C0392D; color: #fff;">5월 사건 전체 보기 →</a>
+  </div>
+</div>
+
+<!-- DETAIL LINK -->
+<div class="detail-link">
+  <div class="detail-link-inner">
+    <h3>더 자세한 사실 관계와 증거가 궁금하신 분께</h3>
+    <p>15년간의 경위, 모든 공문서, 법원 판결문, 구청 답변의 모순까지 — 25년 분쟁의 전체 기록입니다.</p>
+    <a class="detail-btn" href="detail.html">전체 기록 보기 →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  2026년 5월 12일 업데이트 &nbsp;|&nbsp; 화곡동 산105-10번지 토지 소유자 오광탁 ☎ 010-7564-5085<br>
+  공원녹지과 ☎ 02-2600-4185 &nbsp;|&nbsp; 이 페이지의 모든 내용은 공문서·법원 판결문·국민권익위원회 의결서·민원 답변서 등 공적 자료에 근거한 사실입니다.<br>
+  <a href="2026-05-event.html">2026년 5월 사건</a> &nbsp;|&nbsp; <a href="detail.html">전체 기록 보기</a>
+</div>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar" aria-label="아카이브 안내">
+  <div class="sticky-bar-inner">
+    <div class="sticky-bar-msg">
+      <strong>17년 모순. 3개의 공문.</strong> <span class="desktop-only">— </span>사실 관계 자세히 보기
+    </div>
+    <div class="sticky-bar-actions">
+      <a class="sticky-bar-btn" href="2026-05-event.html">5월 사건</a>
+      <a class="sticky-bar-btn secondary" href="detail.html">전체 기록</a>
+    </div>
+    <button class="sticky-bar-close" id="stickyBarClose" aria-label="닫기" title="닫기">×</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var bar = document.getElementById('stickyBar');
+  var closeBtn = document.getElementById('stickyBarClose');
+  var SHOW_AFTER_PX = 250;
+  var STORAGE_KEY = 'stickyBarClosed_2026_05';
+  var closed = false;
+  try { closed = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+
+  if (closed) {
+    bar.classList.add('hidden');
+    return;
+  }
+
+  function update() {
+    if (window.scrollY > SHOW_AFTER_PX) {
+      bar.classList.add('show');
+      document.body.classList.add('bar-shown');
+    } else {
+      bar.classList.remove('show');
+      document.body.classList.remove('bar-shown');
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  closeBtn.addEventListener('click', function () {
+    bar.classList.add('hidden');
+    document.body.classList.remove('bar-shown');
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
